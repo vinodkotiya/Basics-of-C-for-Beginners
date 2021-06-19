@@ -1,0 +1,46 @@
+
+#include <fstream.h>
+#include <dir.h>
+#include <conio.h>
+#include<string.h>
+int main(void)
+{
+   struct ffblk ffblk;
+   int done;
+   char filenmvk[40];
+   cout<<"Directory listing of *.vk\n";
+   done = findfirst("*.VK",&ffblk,0);
+   //while (!done)
+     strcpy(filenmvk,ffblk.ff_name);
+      cout<<"  %s\n"<<filenmvk ;
+     // done  = findnext(&ffblk);
+   //}
+   char output[80],tmp[5];
+   int parts;
+   fstream read;
+   read.open(filenmvk,ios :: in || ios :: binary);
+ //   while(!read.eof())
+ {
+  read.getline(output,79);
+  cout<<"\noutput "<<output<<endl;
+  read>>tmp;//read.getline(tmp,79);
+  cout<<"\ntmp "<<tmp;
+  int i =31;
+  char ch[5];
+  strcpy(ch, (char)i);
+cout<<"\nlen"<<strlen(tmp)<<strcmpi(ch,tmp);
+//  if (strcmp("3",tmp) == 1)
+  // {       cout<<"go out";
+  //  //   return 0;}
+
+ // parts = tmp;
+ // cout<<"\nparts "<<parts<<endl;
+
+   getch();
+  }
+  read.close();
+
+  // getch();
+   return 0;
+}
+

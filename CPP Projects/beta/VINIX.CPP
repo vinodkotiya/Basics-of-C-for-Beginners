@@ -1,0 +1,353 @@
+
+#include<dos.h>
+#include<conio.h>
+#include<fstream.h>
+#include<graphics.h>
+#include<stdlib.h>
+#include<string.h>
+#include<dir.h>
+/////small fonts   2
+/////sanssarif font 3
+/////vinix
+/////by vinod kotiya
+////date created 18 - 04-2003 1.00 pm to 9.00 pm
+
+char *s[12]={"V","I","N","I","X"," ","S","E","T","U","P"," "};
+void createhelp();
+void createbat();
+void sitare(int topy);
+void creator();
+int main()
+{ //clrscr();
+
+// char cmd[8] = {"cd c:\\"},usr[20] = {"md "};
+//   system(cmd);
+   //system("md c:\\root");
+  // system("cd c:\\root");
+  // system("md usr");
+ //  system("md bin");
+ //  system("md dev");
+  // system("md tmp");
+  // system("cd usr");
+  // cout<<"\nPlease enter your login name \n";
+  // cin>>cmd;
+  // system(strcat(usr,cmd));
+   int gm,gd=DETECT,vin = 6;
+ initgraph(&gd,&gm,"");
+ creator();
+ createbat();
+ createhelp();
+
+cout<<" \n \t \t All files installed .........\n\n";
+cout<<"  ********************************************************\n ";
+cout<<" \t  To start command prompt : - \n";
+cout<<" \t     start->accessories->command prompt. (WIN XP)\n";
+cout<<" \t     start->dos prompt. (WIN 9X)\n";
+cout<<" \t          now type vinix to start VINIX";
+cout<<"\n  ********************************************************\n ";
+//getch();
+
+    settextstyle(3,0,3);
+    setcolor(LIGHTRED);
+    outtextxy(10,200,"VINIX has been installed successfully in your system");
+
+    settextstyle(3,0,1);
+    setcolor(3);
+    outtextxy(80,300,"You must restart your system to take effect the changes");
+    outtextxy(80,350,"Type VINIX in dos prompt to activate VINIX");
+    outtextxy(80,380,"Type OUTVIN in dos prompt to Deactivate VINIX");
+    outtextxy(80,410,"Type MAN to see UNIX commands supported by VINIX");
+
+       getch();
+   cleardevice();
+  return 0;
+}
+
+void creator()
+{
+ int i,j,k=100,brk = 0;
+ cleardevice();
+ setbkcolor(BLACK);
+ settextstyle(2,0,15);
+  for(i=0;i<12;i++)
+   {
+    k+=35;
+     for(j=600;j>=k;j-=5)
+       {
+	 sound(random(2000));
+	 setcolor(10);
+	 outtextxy(j,150,s[i]);
+	 setcolor(5);
+	 outtextxy(j,150,s[i]);
+	 delay(random(70));          //100
+	 nosound();
+	 putpixel(random(j),random(480),10);
+	 putpixel(random(j)+1,150+1,3);
+	 if(kbhit() )
+	{ brk = 1;
+	  break;
+	}
+	}
+	setcolor(10);
+	outtextxy(j,150,s[i]);
+       if(brk == 1)
+	break;
+   }
+   if(brk == 1)
+   {cleardevice();  setcolor(WHITE);
+    outtextxy(150,150,"VINIX INSTALLER");
+    for(i = 0; i <200; i++) sitare(480);
+    getch();  }
+   if(brk != 1)
+   delay(2000);
+   settextstyle(2,0,8);
+   setcolor(3);
+   outtext("   PRESS ANY KEY");
+   getch();
+   getch();
+     cleardevice();
+    //if(*s[4] != 'X')
+    // exit(0);
+    settextstyle(2,0,6);
+    setcolor(3);
+    outtextxy(5,20,"B.E. 2nd Year(Information Technology)");
+    outtextxy(5,45,"Bhopal Engg College,Bhopal");
+    outtextxy(5,70,"Add:- s-2,Shrimaya Apart Sector-B/363 ,Sarvdharm Colony,");
+    outtextxy(5,90,"      Bhopal.(India)  Fone# +91-0755-794428");
+    settextstyle(2,0,10);
+    setcolor(GREEN);
+    outtextxy(30,150,"VINOD KOTIYA presenting");
+    settextstyle(2,0,8);
+    setcolor(LIGHTRED);
+    outtextxy(100,200,"VINIX (Learn UNIX in DOS)");
+    settextstyle(2,0,6);
+    setcolor(3);
+    outtextxy(30,250,"It will take less than 5 kb of your hdisk.");
+    outtextxy(30,280,"It is 100 % safe . ");
+    outtextxy(30,310,"More than 30 unix commands are supported.Type MAN in VINIX to see.");
+    outtextxy(80,400,"Do you want to install VINIX(Y/N):- ");
+    char ch;
+    ch = getche();
+    if (ch== 'n' || ch == 'N')
+     {cleardevice();
+      outtextxy(80,400,"You can install VINIX Later");
+      getch();
+      exit(0);
+      }
+
+    //delay(2000);
+   //  getch();
+    cleardevice();
+
+
+}
+
+void sitare(int topy)
+{
+  int x,y;
+  x = random(600);y = 480 - random(topy);    //draw on screen resolution x*y
+  putpixel(x,y,10);
+  putpixel(x+1,y,10);
+  putpixel(x+1,y-1,10);
+  putpixel(x+1,y+1,10);               //       0
+  putpixel(x+2,y,10);                 //      000
+  putpixel(x+3,y,10);                 //    0000000
+  putpixel(x-1,y,10);                 //      000
+  putpixel(x-1,y-1,10);               //       0
+  putpixel(x-1,y+1,10);
+  putpixel(x-2,y,10);
+  putpixel(x-3,y,10);
+  putpixel(x,y+1,10);
+  putpixel(x,y+2,10);
+  putpixel(x,y+3,10);
+  putpixel(x,y-1,10);
+  putpixel(x,y-2,10);
+  putpixel(x,y-3,10);
+}
+ void createbat()
+ {
+ fstream file("c:\\autoexec.bat",ios::out | ios::in | ios :: app);
+ if(file == 0)
+ {
+  cout<<"\nthis file can't be opened";
+   exit (0);
+  }
+  file<<"C:\\WINDOWS\\main.bat\n";
+ file.close();
+ //main.bat
+ file.open("c:\\windows\\main.bat",ios::out);
+ file<<"color b\n"
+  //<<"doskey vinix = C:\\WINDOWS\\VINIX.BAT\n"
+  //<<"doskey outvin = C:\\WINDOWS\\OUTVINIX.BAT\n"
+  <<"cd c:\\ \n"
+  <<"md c:\\root \n"
+  <<"cd c:\\root \n"
+  <<"md usr \n"
+  <<"md tmp \n"
+  <<"md dev \n"
+  <<"md bin \n"
+  <<"cd usr \n"
+  <<"cd\\ \n"
+   <<"cls\n"
+   <<"REM - type VINIX to start unix shell.you can come back to DOS by tping OUTVIN";
+ file.close();
+ //vinix.bat
+ file.open("c:\\windows\\vinix.bat",ios::out);
+ file<<"COLOR A\n"
+<<"title = VINIX (vShell) learn UNIX in DOS :- BY VINOD KOTIYA\n"
+<<"CD\\ \n"
+<<"CD C:\\root\\USR \n"
+<<"cls \n"
+<<"prompt $$ \n"
+<<"rem doskey /macrofile = c:\\windows\\vinix.vin \n"
+<<"doskey pwd = cd \n"
+<<"doskey ls = dir \n"
+<<"doskey ls-l = dir /on \n"
+<<"doskey ls-l-r = dir /O-N \n"
+<<"doskey LS-R-L = DIR /O-N \n"
+<<"cls \n"
+<<"doskey LS-S = DIR /OS \n"
+<<"doskey LS-S-R = DIR /O-S \n"
+<<"doskey LS-R-S = DIR /O-S \n"
+<<"doskey LS-T = DIR /OD \n"
+<<"doskey LS-T-R = DIR /O-D \n"
+<<"DOSKEY LS-R-T = DIR /O-D \n"
+<<"doskey LS1MORE = DIR /P \n"
+<<"doskey MAN = EDIT C:\\WINDOWS\\VINHELP.VIN \n"
+<<"doskey LC = dir /W \n"
+<<"doskey LC-l = dir /on /W \n"
+<<"doskey LC-l-r = dir /O-N /W \n"
+<<"cls \n"
+<<"doskey LC-R-L = DIR /O-N /W \n"
+<<"doskey LC-S = DIR /OS /W  \n"
+<<"doskey LC-S-R = DIR /O-S /W  \n"
+<<"doskey LC-R-S = DIR /O-S /W \n"
+<<"doskey LC-T = DIR /OD /W \n"
+<<"doskey LC-T-R = DIR /O-D /W \n"
+<<"cls \n"
+<<"DOSKEY LC-R-T = DIR /O-D /W \n"
+<<"doskey LC1MORE = DIR /W \n"
+<<"DOSKEY ED = EDIT \n"
+<<"DOSKEY DIFF = COMP \n"
+<<"DOSKEY DSKCMP = DISKCOMP \n"
+<<"doskey who = cd c:\\root\\usr $T cd\n"
+<<"doskey logname = cd c:\\root\\usr $T cd\n"
+<<"doskey cp = copy \n"
+<<"doskey mv = move \n"
+<<"doskey file = attrib \n"
+
+<<"cls \n"             //now disabled some commands
+//<<"DOSKEY DIR = echo in VINIX use ls or lc \n"
+//<<"DOSKEY  edit = echo in VINIX use ed \n"
+//<<"DOSKEY  comp = echo in VINIX use diff \n"
+//<<"DOSKEY  move = echo in VINIX use mv \n"
+//<<"DOSKEY  attrib = echo in VINIX use file \n"
+<<"DOSKEY  color = echo  VINIX not permit this \n"
+<<"DOSKEY  doskey = echo in VINIX doskey is disabled \n" //add before it
+<<"cls \n"
+<<"rem              VINIX(vShell) \n"
+<<"rem LEARN UNIX IN DOS :- BY VINOD KOTIYA \n"
+<<"rem -> VINIX is now Activated.Press OUTVIN to get back DOS Shell.\n"
+<<"rem -> type MAN to see the unix commands supported by VINIX.\n";
+//<<"pwd ";
+file.close();
+//outvinix.bat
+ file.open("c:\\windows\\outvin.bat",ios::out);
+ file<<"COLOR b\n"
+<<"title = command prompt returned from VINIX(vShell)\n"
+<<"CD\\ \n"
+<<"cls \n"
+<<"prompt $p$g \n"
+<<"doskey pwd = \n"
+<<"doskey ls =  \n"
+<<"doskey ls-l =  \n"
+<<"doskey ls-l-r =  \n"
+<<"doskey LS-R-L =  \n"
+<<"doskey LS-S =  \n"
+<<"doskey LS-S-R = \n"
+<<"cls \n"
+<<"doskey LS-R-S =  \n"
+<<"doskey LS-T =  \n"
+<<"doskey LS-T-R = \n"
+<<"DOSKEY LS-R-T =  \n"
+<<"doskey LS1MORE = \n"
+<<"doskey MAN = \n"
+<<"doskey lC-l = \n"
+<<"doskey lC-l-r = \n"
+<<"doskey LC-R-L =  \n"
+<<"doskey LC-S = \n"
+<<"doskey LC-S-R =   \n"
+<<"cls \n"
+<<"doskey LC-R-S =  \n"
+<<"doskey LC-T =  \n"
+<<"doskey LC-T-R =  \n"
+<<"DOSKEY LC-R-T =  \n"
+<<"doskey LC1MORE =  \n"
+<<"DOSKEY ED =  \n"
+<<"DOSKEY DIFF =  \n"
+<<"DOSKEY DSKCMP =  \n"
+<<"doskey who = \n"
+<<"doskey logname = \n"
+<<"doskey cp = \n"
+<<"doskey mv =  \n"
+<<"doskey file =  \n"
+
+<<"cls \n"   //add above
+<<"rem LEARN UNIX IN DOS :- BY VINOD KOTIYA \n"
+<<"rem - VINIX is now DeActivated.Entering back to DOS Shell.";
+file.close();
+
+ }
+ void createhelp()
+ {
+  fstream file("c:\\windows\\vinhelp.vin",ios::out );
+ if(file == 0)
+ {
+  cout<<"\nthis file can't be opened";
+   exit (0);
+  }
+
+ file<<" some UNIX COMMANDS supported by VINIX \n\n"
+<<"CD       Displays the name of or changes the current directory.\n"
+<<"CHDIR    Displays the name of or changes the current directory.\n"
+<<"CLS      Clears the screen.\n"
+<<"CMD      Starts a new instance of the Windows command interpreter.\n"
+<<"DIFF     Compares the contents of two files or sets of files.\n"
+<<"COPY     Copies one or more files to another location.\n"
+<<"DATE     Displays or sets the date.\n"
+<<"DEL      Deletes one or more files.\n"
+<<"ls       Displays a list of files and subdirectories in a directory.\n"
+<<"   ls-l    no space should be given between\n"
+<<"   ls-l-r  \n   ls-r-l \n   ls-s \n   ls-s-r \n   ls-r-s \n   ls-t"
+<<"   ls-t-r \n   ls-r-t \n   ls1more   \n"
+<<"   lc-l-r  \n   lc-r-l \n   lc-s \n   lc-s-r \n   lc-r-s \n   ls-t\n"
+<<"   lc-t-r \n   lc-r-t \n   lc1more   \n"
+<<"DSKCMP   Compares the contents of two floppy disks.\n"
+<<"ECHO     Displays messages, or turns command echoing on or off.\n"
+<<"ED       Edit/create any file\n"
+<<"ERASE    Deletes one or more files.\n"
+<<"FILE Report type of a file\n"
+<<"EXIT     Quits the CMD.EXE program (command interpreter).\n"
+<<"FORMAT   Formats a disk for use with Windows.\n"
+<<"MAN      Provides Help information for Windows commands.\n"
+<<"MD       Creates a directory.\n"
+<<"MKDIR    Creates a directory.\n"
+<<"MODE     Configures a system device.\n"
+<<"MORE     Displays output one screen at a time.\n"
+<<"MV       Move a file \n"
+<<"PRINT    Prints a text file.\n"
+<<"RD       Removes a directory.\n"
+<<"REN      Renames a file or files.\n"
+<<"RENAME   Renames a file or files.\n"
+<<"REPLACE  Replaces files.\n"
+<<"RMDIR    Removes a directory.\n"
+<<"SORT     Sorts input.\n"
+<<"START    Starts a separate window to run a specified program or command.\n"
+<<"SUBST    Associates a path with a drive letter.\n"
+<<"TIME     Displays or sets the system time.\n"
+<<"TREE     Graphically displays the directory structure of a drive or path.\n"
+<<"CAT      Displays the contents of a text file.\n"
+<<"WHO      reports active user\n"
+<<"XCOPY    Copies files and directory trees.\n";
+ file.close();
+}

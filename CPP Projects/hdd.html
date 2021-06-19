@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <title>hdd</title>
+</head>
+<body>
+Wasted Space<br>
+<br>
+The wasted space is the amount of space in clusters on you harddisk, that
+are not entirely filled. Keep the following formula in mind: size + wasted
+space = allocated space. Windows 95 with its file system FAT may have very
+large cluster sizes, dependent on the partition size:<br>
+<br>
+<br>
+ &nbsp;&nbsp; FAT &nbsp;&nbsp; FAT32<br>
+<br>
+Partition Size &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; Cluster Size &nbsp;&nbsp;
+Partition Size &nbsp;&nbsp; Cluster Size<br>
+128 - 256 MB &nbsp;&nbsp; &nbsp; 4 KB &nbsp;&nbsp; 1 - 8 GB &nbsp;&nbsp;
+4 KB<br>
+257 - 512 MB &nbsp; &nbsp; &nbsp; 8 KB &nbsp;&nbsp; 8 - 16 GB &nbsp;&nbsp;
+8 KB &nbsp;&nbsp; &nbsp; &nbsp; <br>
+513 - 1024 MB &nbsp;&nbsp; &nbsp; 16 KB &nbsp;&nbsp; 16 - 32 GB &nbsp;&nbsp;
+16 KB<br>
+1025 - 2048 MB &nbsp; &nbsp; 32 KB &nbsp;&nbsp; &gt;32 GB &nbsp;&nbsp; 32
+KB<br>
+<br>
+<br>
+<br>
+Partitions larger than 2GB are not possible with FAT. If you for example
+have a single partition on a 1.2GB harddisk, you have a cluster size of 32KB
+on it. If you store 10 files of 1 KB on this partition, this would use 10*32KB=320KB
+of your precious harddisk space, and 320KB-10KB=310KB would be wasted. Especially
+a huge number of small files significantly increase the amount of wasted
+space on FAT partitions.<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+To reduce the wasted space, there are the following possibilities: <br>
+<br>
+<br>
+<br>
+&middot; &nbsp;&nbsp; Make smaller partitions. Don't make partitions larger
+than 1024MB using FAT, because partitions larger than 1024MB will have a
+cluster size of 32KB and a lot of wasted space. People reported wasted space
+up to 25% on 2GB partitions. Of course smaller partitions will increase the
+number of drive letters.<br>
+<br>
+&middot; &nbsp;&nbsp; Use FAT32 instead of FAT to format your partitions,
+because it operates with smaller clusters. FAT32 is&nbsp; incompatible to
+the old FAT file system, so be careful using old disk repair utilities on
+it. You cannot access FAT32 partitions with Windows NT4.<br>
+<br>
+<br>
+&middot; &nbsp;&nbsp; Windows NT/2000 provides the possibility to format
+your harddisk with the NTFS file system. It usually operates with 512 byte
+clusters and has the best storage efficiency of all Windows file systems.
+NTFS partitions cannot be accessed from Windows 9x or DOS without use of
+3rd party software. In addition, NTFS can compress selected directory branches.
+The compression is invisible for applications and you don't need a new drive
+letter like with the DriveSpace software.<br>
+<br>
+<br>
+</body>
+</html>

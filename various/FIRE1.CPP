@@ -1,0 +1,70 @@
+/*FIRE1.*  Borland C++ 3.0
+
+   Copyright (c) 2001 - ? VINOD KOTIYA International. All rights reserved.
+
+   From the command line, use:
+
+		VKK KBC graphics.lib
+*/
+#include<stdio.h>
+#include<conio.h>
+#include<process.h>
+#include<dos.h>
+void path(int p)
+{
+ int r=22,j=24; p=p+1;
+ while(r!=1)
+  {
+  gotoxy(p,r);
+  printf("%c",j);
+  delay(50);
+  gotoxy(p,r);
+  printf(" ");
+  r--;
+  }
+}
+void target()
+{int col ,j=1,two =2;
+ //window(1,1,75,3);
+ for(int i=0;i<6;i++)
+ {
+  for(col=1;col<=75;col++)
+  {
+  gotoxy(col,two);
+  printf(" %c ",j);delay(30);
+  }
+  for(col=75;col>=1;col--)
+  {
+  gotoxy(col,two);
+  printf("%c",j);delay(30);
+  }two++;j++;
+ }
+}
+void main()
+{
+ clrscr();
+ char ch; int gun=206,c=35;
+ int p;
+ printf("\n\n\n\n\n\t\t\tPRESS DIRECTION KEYS FOR MOVEMENT \n\n\n\t\t\tPRESS SPACEBAR TO FIRE");getch();
+ clrscr();  target();
+ do
+ {
+ ch = getch();
+  if(ch == 75 && c>=1)
+  {
+   c--;
+   gotoxy(c,23);
+   printf(" %c                            ",gun);
+ }
+  else if(ch ==77 && c<=75)
+  {c++;
+  gotoxy(c,23);
+  printf(" %c                            ",gun);
+  }
+  else if(ch == 32)
+  {
+       p = c;
+       path(p);
+     }
+ }while(ch!=27);
+}

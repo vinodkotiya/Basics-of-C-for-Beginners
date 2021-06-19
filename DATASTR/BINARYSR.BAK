@@ -1,0 +1,77 @@
+#include<iostream.h>
+#include<conio.h>
+#include<dos.h>
+void bubblesort(int [],int );
+
+//funtion take array , length & item to be found as argument
+//search the item and return location in array
+int binarysearch(int a[],int length,int item)
+{
+ int beg,end,mid,loc;
+ beg = 0;end = length-1;               //set positions
+ mid = (beg+end)/2;
+ while( beg <= end && a[mid] != item )
+  {
+    if(item < a[mid])
+      end = mid - 1;
+    else
+      beg = mid + 1;
+    mid = (beg + end)/2;
+  }
+  if(a[mid] == item)
+    loc = mid;    //success
+  else
+   loc = -1;     //item's location not found
+  return loc;
+}         //end of fun
+
+void main()
+{
+ char choice;
+ do
+ {
+  clrscr();
+  int arr[6],location;
+  for(int i=0;i<6;i++)
+   {
+    cout<<"\nEnter Element : - ";
+    cin>>arr[i];
+   }
+   bubblesort(arr, 6);
+   cout<<"\nEnter the item to be found : - \n";
+   cin>>i;
+   location = binarysearch(arr,6,i);
+   if(location == -1)
+    cout<<"\nItem "<<i<<" does not found ";
+   else
+    cout<<"\nItem "<<i<<" is found at location "<<location+1<<" in the array";
+  cout<<"\nDo you want to continue (Y/N) :- ";
+  choice = getche();
+ }while(choice == 'y' || choice == 'Y');
+ getch();
+}
+
+void bubblesort(int a[],int length)
+{
+ cout<<"\nSorting your array ..";
+ for(int i = 0;i<length-1;i++)
+  {
+   for(int j = i+1; j <= length-1;j++)
+   {
+    if(a[i] > a[j])
+     {
+      int temp;
+      temp = a[i];
+      a[i] = a[j];
+      a[j] = temp;
+      cout<<"...";
+      delay(200);
+     }    //end of if
+   }       //end of for j
+ }        //end of for i
+ cout<<"\nArray is sorted \n";
+ for(i=0;i<6;i++)
+   {
+    cout<<a[i]<<"  ";
+   }
+}         //end of fun

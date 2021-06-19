@@ -1,0 +1,105 @@
+Which of the following is a peripheral
+device used with a computer?
+Squirrel
+Mouse
+Rat
+Wombat
+B
+How many bytes in
+A Megabyte?
+1 Million
+10 Thousand
+100 Thousand
+1000
+A
+Which of the following is
+part of a computer?
+Brotherboard
+Motherboard
+Fatherboard
+Auntieboard
+B
+What does LAN
+stand for?
+Local Association of Networks
+London Addresses Notebook
+Local Area Network
+Logic Alternating Node
+C
+Which of the following is not
+an Object-Oriented language?
+Visual Basic
+Java
+C++
+C
+D
+What is another name for
+volatile memory?
+REM
+ROM
+RAM
+RIM
+C
+What does GUI
+Stand for?
+Grand Unified Implementation
+Graphical User Interface
+Giga Ultraviolet Interference
+Graphical Unit Iteration
+B
+What is the binary number 110101
+expressed in denary?
+4
+53
+55
+106
+B
+Who was the inventor of
+The World Wide Web?
+Tim Brook-Taylor
+Tim Berners-Lee
+Bill Gates
+Steve Jobs
+B
+Which of the following is Not
+an Operating System?
+NT4
+UNIX
+Windows3.1
+Linux
+C
+What does MIDI
+stand for?
+Music Input Direct Inject
+Musical Instrument Digital Interface
+Musical Instrument Digital Input
+Music Internal Decoding Input
+B
+With which function does processing start
+in a C program?
+begin()
+init()
+start()
+main()
+D
+A process may consist of
+many what?
+Threads
+Strings
+Methods
+Operators
+A
+What does the ORB stand for
+in CORBA?
+OpenSystems Regulatory Body
+Object Request Broker
+Orange Red Blue
+Over Recursive Build
+B
+A pointer in C can
+Not point to?
+Another pointer
+A Function
+A memory location
+Itself
+D

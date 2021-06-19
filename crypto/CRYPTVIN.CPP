@@ -1,0 +1,92 @@
+//  **************************************************************************
+//  *******************  Author : Vinod Kotiya *******************************
+//  ************ B.E.2nd yr(Information Technology) **************************
+//  ***************** Bhopal Engg College Bhopal *****************************
+//  ************ copywrite:JUN 2003.All Rights Unreserved ******************
+//  *********** compeletion date :- 24/06/2003 to 27/06/2003 *****************
+//  ******** Basic Compeletion time :- 4.30 Hrs.(13.00 pm to 17.30 am) ***************
+//  *******Address:- s-2 shrimaya apartment sector-b/363 sarvdharm ***********
+//  **************** Colony ,Bhopal Fone: +91-0755-794428 ********************
+//  **************** WEB: http:\\vinodkotiya.tripod.com ********************
+//  **************** Email: vinodkotiya24@rediffmail.com ********************
+//  **************************************************************************
+//  Note:- confirm that you must have supported files EGAVGA.BGI,TRIP.CHR & LITT.CHR,SANS.CHR,KOOT.vin
+//         (distributed with exe) In the
+//         same folder of exe. othervise application will not run properly
+//         If you alter any thing in the code,any problem may arise
+
+
+#include<fstream.h>
+#include<conio.h>
+#include<graphics.h>
+#include<time.h>
+#include<string.h>
+#include<stdio.h>
+#include<f:\cpp\crypto\decrypt.cpp>
+#include<f:\cpp\crypto\encrypt.cpp>
+#include<f:\cpp\crypto\grafix.cpp>
+#include<f:\cpp\crypto\password.cpp>
+
+char pwd[200];   //extern used in all files store users password
+
+int main()
+{
+ int gm,gd=DETECT,call;
+ initgraph(&gd,&gm,"");
+ clrscr();
+ creator();
+ char opt;
+
+    title();
+    call= password();    //return 1 if permission granted
+	  //return 0 if password not verified
+    // cout<<"\npassword "<<pwd;
+   // getch();
+    if (call != 1)
+     {
+      closegraph();
+      return 0;
+     }
+ while(call == 1)        //en\decryption  module return 1 on success
+  {
+   cleardevice();
+    title();
+    settextstyle(2,0,6);
+    setcolor(YELLOW);
+    outtextxy(15,150,"Enter Option (1 or 2): - ");
+    setcolor(GREEN);
+    outtextxy(15,190,"      1. Encryption");
+    outtextxy(15,220,"      2. Decryption");
+
+    //settextstyle(TRIPLEX_FONT,0,1);
+    //setcolor(LIGHTRED);
+    setcolor(LIGHTRED);
+    settextstyle(2,0,4);
+    outtextxy(20,330,"Encryption will convert your file in to a encrypted file which will in Nonunderstandable Format ");
+    outtextxy(20,350,"Decryption will restore your original file from encrypted file.");
+    setcolor(RED);
+    outtextxy(20,370,"  You can encrypt or decrypt files of GIGABYTE size in afew seconds.");
+    setcolor(YELLOW);
+    outtextxy(50,400,"NOTE:- Folder and File Names should not larger than 8 character and not contain spaces.");
+    outtextxy(50,420,"       Here is a valid filename  d:\\mydoc\\xfiles\\account.doc");
+    textcolor(LIGHTGRAY);
+    textbackground(BLACK);
+    gotoxy(35,11);
+    opt = getch();
+
+   if (opt=='1')
+    call = encrypt();
+   else if(opt == '2')
+    call = decrypt();
+   else if(opt == '?')
+    help();
+   else if(opt == 27 || opt == 'q' || opt == 'Q')
+    return 0;
+   else
+    {outtextxy(250,260,"Sirji, Please Enter only 1 or 2. Press any key......");
+     getch();
+    }
+ }
+ closegraph();
+ return 0;
+}

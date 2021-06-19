@@ -1,0 +1,518 @@
+
+#include<iostream.h>
+#include<graphics.h>
+#include<conio.h>
+#include<string.h>
+#include<stdlib.h>
+#include<dos.h>
+int s;
+int cont();
+void welcome();
+void start();
+void help();
+void aboutp();
+void aboutm();
+void main(void);
+char option();
+void title(void);
+char j,f=5;
+void main(void)
+{
+ clrscr();
+// int gd=DETECT,gm;
+ //initgraph(&gd,&gm,"c:\\tc\\bgi");
+// setbkcolor(BLUE);
+ welcome();
+ //delay(2000);
+ start();
+// title();
+// dir d;
+// d.datacomman();
+ closegraph();
+ getch();
+}
+
+class dir
+{
+  char fone1[14],fone2[14];
+  long int std;        //131 bytes each person
+  double mobile;
+  char nm[15],snm[15],place[22],ct[10],post[25];
+
+ public:
+ void set(long int , char [] ,char [],double,char[],char[],char [],char[],char[]);
+ void nmchoice();
+ void snmchoice();
+ void ctchoice();
+ void placechoice();
+ void data();
+};
+void dir :: set( long int s,char f1[14],char f2[14],double m,char n[15],char sn[15],char pst[25],char c[10],char p[22])
+{
+ std = s;
+ strcpy(fone1,f1);//fone1 = f1;
+ strcpy(fone2,f2); //fone2 = f2;
+ mobile = m;
+ strcpy(nm,n);
+ strcpy(snm,sn);
+ strcpy(post,pst);
+ strcpy(ct,c);
+ strcpy(place,p);
+
+}
+
+void dir :: data()
+{
+ int i,v,r=1,get;
+ char choice[15],ch,e;
+ int loop=91;     //should be more then one of s[].set
+ dir s[91];
+ s[0].set(755,"(R)794428"," ", 0,"RAMESH","KOTIYA","FIELD OFFICER","BHOPAL","SARVDHARM COL");
+ s[1].set(95731,"(R)460053"," ",0,"MAHENDRA","KADAM","BUISENESS","INDORE","INDRAPURI");
+ s[2].set(755,"(R)763809"," ",98272.04449 ,"REWARAM","JATAV","GOVT SERVICE","BHOPAL","TTNAGAR");
+ s[3].set(755,"(R)736852"," ",0,"JAI","NEEM","BUISENESS","KHAMGAON"," ");
+ s[4].set(755,"(R)767173"," ",98262.86230 ,"PAPPU","SIKARWAR"," ","BHOPAL","TTNAGAR");
+ s[5].set(95731," ","(O)363153",98272.15774 ,"RAJKUMAR","NEEM","BUSIENESS","INDORE","AZAD NAGAR");
+ s[6].set(755,"(R)574446"," ", 0,"RAMKUMAR","SHARMA"," ","BHOPAL","MAYUR PARK");
+ s[7].set(755,"(R)556544"," ", 0,"ANIL","SHRIVASTAVA","F.O.","BHOPAL","JAHANGIRABAD");
+ s[8].set(755,"(R)794840"," ", 0,"RAJABABU","SHRIVAS"," ","BHOPAL","SARVADHARAM COL.");
+ s[9].set(755,"(R)793714"," ", 0,"VAIBHAV","UNDE"," ","BHOPAL","RAJHARSH COLONY");
+ s[10].set(755,"(R)559199"," ",0,"KUNAL","PUROHIT"," ","BHOPAL","MAYUR PARK");
+ s[11].set(755,"(R)794821"," ",0,"RAMESH","VERMA"," ","BHOPAL","SARVADHARAM COL");
+ s[12].set(755,"(R)794146"," ",0,"VARSHA","MAHIRALE"," ","BHOPAL","SARVADHARAM COL.");
+ s[13].set(755,"(R)731244"," ",0,"RAMKISHAN","JATAV","SUP.","BHOPAL","P&T COLONY");
+ s[14].set(755," ","(O)535599",0,"RAMKISHAN","JATAV","SUP.","BHOPAL","EXCHANGE");
+ s[15].set(755,"(R)535721"," ",0,"UMESH"," ","BHOPAL","BUSINESS","HAMIDIA HOSPITAL");
+ s[16].set(755,"(R)660666"," ",0,"DIGVIJAY","CHOUHAN "," ","BHOPAL","POLYTECHNIC");
+ s[17].set(755,"(R)793511"," ",0,"MAHESH","VERMA"," ","BHOPAL","SARVADHARAM COLONY");
+ s[18].set(755,"(R)774139"," ",0,"RAVINDRA","MANAVAT","2nd GRADE","BHOPAL","KOTRA");
+ s[19].set(755,"(R)556047"," ",0,"AMIT","GUPTA"," ","BHOPAL","6 NO. STOP");
+ s[20].set(755,"(R)792074"," ",0,"RAIGAS","R-15380","BUSINESS","BHOPAL","BEEMAKUNJ");
+ s[21].set(755,"(R)428204"," ",0,"SHANKAR","PATEL","BUSINESS","BHOPAL","SHAHPURA CHAWANI");
+ s[22].set(755,"(R)468269"," ",0,"KUNAL","GAJBHIYE","BUSINESS","BHOPAL ","E3-345 ARERA COLONY");
+ s[23].set(755,"(R)779462"," ",0,"RAJU","BHARAT"," ","BHOPAL","NORTH T.T.NAGAR");
+ s[24].set(755,"(R)421774"," ",0,"AMOL"," "," ","BHOPAL","NEAR AYUSHMAN HOSPITAL");
+ s[25].set(755,"(R)436852"," ",0,"PIYUSH","MALVIYA"," ","BHOPAL","ROYAL MARKET");
+ s[26].set(755," "," ",98270.15072,"RAM GOPAL","ARYA","S.I.","BHOPAL","SARVADHARAM COLONY");
+ s[27].set(95731,"(R)710868"," ",0,"NAND KISHOR","NEEM","BUSINESS","INDORE","MUSA KHEDI");
+ s[28].set(957595,"(R)55361"," ",0,"PURAN SINGH","PATEL","CONTRACTOR","VIDISHA","KAKHPUR");
+ s[29].set(7542,"(R)30583","(O)56528*56",0,"R.P.","BAKORIYA","A.D.S.","GUNA"," ");
+ s[30].set(957562,"(R)63461"," ",0,"KUSHIRAM"," ","FARMER","SIHORE","BADNAGAR");
+ s[31].set(957562,"(R)63441"," ",0,"KUSHIRAM"," ","FARMER","SIHORE","BADNAGAR");
+ s[32].set(7591,"(R)52783","PP",0,"RAJKUMAR","KABEER PANTHI"," ","VIDISHA","SIRONGE");
+ s[33].set(957595,"(R)55389"," ",0,"HEERALAL"," ","FARMER","VIDISHA","NATERAN");
+ s[34].set(734,"(R)517982"," ",0,"HANSABHABHI"," "," ","UJJAIN"," ");
+ s[35].set(7263,"(R)55840"," ",0,"NARAYAN SINGH","PIMPLE"," ","MAHARASHTRA","KHAMGAON");
+ s[36].set(755,"(R)794348"," ",0,"G.F.","SHAHEER","ASST. AD. OFF.","BHOPAL","SARVADHARAM COLONY");
+ s[37].set(755,"(O)422980","(O)422981",0,"AYUSHMAN","HOSPITAL"," ","BHOPAL","SHAHPURA");
+ s[38].set(755," ","(O)793600",0,"RITUMEMORIAL","HOSPITAL"," ","BHOPAL","KOLAR ROAD");
+ s[39].set(755," ","(O)793889",0,"POLICESTATION"," ","BHOPAL"," ","KOLAR ROAD");
+ s[40].set(755,"(R)275525"," ",0,"PRIYANSHU","MISHRA"," ","BHOPAL"," ");
+ s[41].set(755," ","(O)274147",98260.11268,"BUNTY","AD TECH","BUSINESS","BHOPAL","M.P.NAGAR");
+ s[42].set(755," "," ",0,"VISHWAS","RATHORE"," ","BHOPAL","BAIRAGARH");
+ s[43].set(7542,"(R)68172"," ",0," ","SANGER","ACCOUNTANT","GUNA","A.D.S.O.");
+ s[44].set(755," ","(O)540841",0,"INQUIRY","NADARA BUS STAND"," ","BHOPAL","HAMIDIA ROAD");
+ s[45].set(755," ","(O)540806",0,"HAMIDIA","HOSPITAL"," ","BHOPAL","HAMIDIA ROAD");
+ s[46].set(755," ","(O)552490",0,"RAJEEV","TIWARI","PRINCIPAL EXCELANCE"," BHOPAL"," 7 NO.STOP");
+ s[47].set(7542," ","(O)56228",0,"R.P.","BAKORIYA","A.D.S.","GUNA","  ");
+ s[48].set(95731,"(R)720523","(O)788795",0,"A.K.","BAKLIBAL","A.D.S.","INDORE","  ");
+ s[49].set(7642,"(R)52631","(O)52408",0,"ANIL","UPADHYA","A.D.S.","MANDLA","  ");
+ s[50].set(761," ","(O)327139",0,"SUDHIR","AGRAWAL","F.O.","JABALPUR","  ");
+ s[51].set(957574," ","(O)54236",0,"RAKESH","SHRIVASTAVA","A.D.S.","HOSHNGABAD","  ");
+ s[52].set(957578,"(R)52093","(O)52851",0,"RAKESH","SHRIVASTAVA","A.D.S.","PANCHMADI","  ");
+ s[53].set(957592,"(R)34620","(O)35965",0,"ATUL","THAPER","A.D.S.","VIDISHA","  ");
+ s[54].set(957372,"(R)55089","(O)54818",0,"BANDNA","PANERI","A.D.S.","RAJGARH","  ");
+ s[55].set(957562,"(R)56673","(O)55619",0,"R.S.","SOLNKI","A.D.S.","SIHORE","  ");
+ s[56].set(7632,"41781"," ",0,"SARAD","SHRIVASTAVA","A.D.S.","BALAGHAT","  ");
+ s[57].set(7422,"(R)42543","(O)55751",0,"P.C.","GUPTA","A.D.S.","MANDSORE","  ");
+ s[58].set(957792,"(R)30120","(O)33915",0,"A.K.","PATEL","A.D.S.","NARSINGHPUR","  ");
+ s[59].set(7822,"(R)2704"," ",0,"M.L.","SONI","A.D.S.","SAHDOL","  ");
+ s[60].set(95734," ","(O)510620",0,"S.P.","DUBAY","A.D.S.","UJJAIN","  ");
+ s[61].set(957292,"(R)48584"," ",0,"K.C.","BADJATYA","A.D.S.","DHAR","  ");
+ s[62].set(755,"(R)779135"," ",0,"SUNIL","SHRIVASTAVA","F.O.S.","BHOPAL","  ");
+ s[63].set(755,"(R)535737","(O)555835",0,"POLY MARKATING","  ","BUSINESS","BHOPAL","HAMIDIA ROAD");
+ s[64].set(957482,"(R)22520"," ",0,"K.S.","RATHORE","F.M.","RAISEN","  ");
+ s[65].set(957482,"(R)22547"," ",0,"JAGDISH","MANDLEKAR","GRADE-3","RAISEN","  ");
+ s[66].set(755,"(R)551773","(O)778237",0,"DR.H.K.","CHATURBEDY","J.D.S.","BHOPAL","  ");
+ s[67].set(755,"(R)534335","(O)597357",0,"PUROSHOTTAM","SHARMA","U.S.","BHOPAL","BALLABH BHAVAN");
+ s[68].set(755," ","(O)552118",0,"DIR.SERICULTURE","  ","H.O.","BHOPAL","SATPUDA");
+ s[69].set(755,"(R)748639"," ",0,"NEERAJ","BHARTI","J.S.I.","BHOPAL","KAMLAPARK");
+ s[70].set(755," ","(O)556811*480",0,"AFSER","KHAN","P.R.O.","BHOPAL","P.H.Q.");
+ s[71].set(755," ","(O)597402",0,"S.K.","VISVAKARMA","BHOPAL","S.O.","GRAMO.MANTRALAYA");
+ s[72].set(755,"(R)576467","(O)597388",0,"R.K.","TIWARI","DY.SEC.","BHOPAL","GRAMO.MANTRALAYA");
+ s[73].set(755,"(R)625293","     ",0,"K.M.","KANKANE","F.O.","BHOPAL","  ");
+ s[74].set(755,"(R)767462","     ",0,"S.K.","JADHAV","GRADE-2","BHOPAL","  ");
+ s[75].set(755,"(R)584685"," ",0,"PROMILA","KADAM"," ","BHOPAL"," ");
+ s[76].set(755," ","(O)551316",0,"USHA","THILLORE","GRADE-3","BHOPAL"," ");
+ s[77].set(7762,"(R)21107"," ",0,"R.K.","KULSHRESHTA","A.E.O.","RAIGARH"," ");
+ s[78].set(755,"(R)762606"," ",0,"  ","SANT","F.O.","BHOPAL","NEHRU NAGAR");
+ s[79].set(957595,"(R)37968"," ",0,"S.P.","CHANDRABANSHI","F.O.","VIDISHA"," ");
+ s[80].set(957482,"(R)63934"," ",0,"H.S.","SONI","F.O.","SANCHI"," ");
+ s[81].set(7762," ","(O)22863",0,"S.S.","KANWAR","A.D.S.","RAIGARH"," ");
+ s[82].set(7724,"(R)46442"," ",0,"SIDHARTH","KURRE","C.E.O.","BASNA"," ");
+ s[83].set(7494,"(R)42462"," ",0,"Mst.","GOSWAMI","HOST.SUP.","KOLARAS"," ");
+ s[84].set(7324,"(R)71923"," ",0,"RAJU","KADAM","","MHOW","YADAV MOHALLA");
+ s[85].set(755,"(R)794703"," ",0,"NAKUL","VYAWAHARE","","BHOPAL","VINIT KUNJ");
+ s[86].set(755,"(R)773334"," ",0,"SHIVENDRA","BHADORIYA","","BHOPAL","KOTRA");
+ s[87].set(755,"(R)792566"," ",0,"VRINDAVAN","VERMA","","BHOPAL","LALITA NAGAR");
+ s[88].set(755,"(R)792663"," ",0,"ANAND","SINGH","","BHOPAL","SARVADHARAM");
+ s[89].set(755,"(R)794417"," ",0,"AVTAR","SINGH","","BHOPAL","SARVADHARAM");
+ s[90].set(7542,"(PP)52582"," ",0,"S.S.","TOMAR","J.S.I.","GUNA"," ");
+ s[91].set(755,"(R)5291345"," ",0,"REHMAN","KHAN"," "," "," ");
+ // s[].set( ,"","", ,"","","","","");  //  <-- COPY THIS,PASTE IN ORDER & THEN FILLUP THE ENTRIES //AFTER THIS UPDATE THE loop AT LINE 51  & dir  s[]  AT LINE  52 above
+
+ VINOD:
+ title();
+ v=option();
+ title();
+
+ if(v=='n'||v=='N')
+ {
+  cout<<"\nENTER ONLY NAME  WITHOUT SURNAME\n\t";
+  cin>>choice;
+  for(i=0;i<loop;i++)
+  {
+
+   if(strcmpi(choice,s[i].nm)==0)
+    {
+     r=0;
+     s[i].nmchoice();
+    }
+  }
+  if(r!=0)
+  cout<<"\nThe NAME "<<choice<<" You Have Entered Does Not Exist.";
+  get = cont();
+  if(get == 6)
+  goto VINOD;
+ }
+  else if(v=='s'||v=='S')
+ {
+  cout<<"\nENTER ONLY SURNAME \n\t";
+  cin>>choice;  int k=0;
+  for(i=0;i<loop;i++)
+  {
+
+   if(strcmpi(choice,s[i].snm)==0)
+    {r=0;k++;
+    if(k>1 && k%2 ==0)        //SEE F
+      {
+       cout<<"\nPRESS ENTER TO PROCEDE";e=getch();
+       if(e==13)
+	{title();}
+      }
+    s[i].snmchoice();}
+  }
+  if(r!=0)
+  cout<<"\nThe SURNAME "<<choice<<" You Have Entered Does Not Exist.";
+  get = cont();
+   if(get == 6)
+  goto VINOD;
+ }
+  else if(v=='c'||v=='C')
+ {
+  cout<<"\nENTER ONLY CITY NAME \n\t";
+  cin>>choice;
+  int k=0;
+  for(i=0;i<loop;i++)
+  {
+
+   if(strcmpi(choice,s[i].ct)==0)
+    {r=0;k++;
+    if(k>1 && k%2 ==0)        //SEE F
+      {
+       cout<<"\nPRESS ENTER TO PROCEDE";e=getch();
+       if(e==13)
+	{title();}
+      }
+
+    s[i].ctchoice();}
+  }
+  cout<<"\n\t"<<f<<f<<f<<f<<f<<f<<f<<f<<f<<f<<f<<f<<"  STAUS:- "<<k<<" NUMBERS FOUND  "<<f<<f<<f<<f<<f<<f<<f<<f<<f<<f<<f<<f;
+  if(r!=0)
+  cout<<"\nThe CITY NAME "<<choice<<" You Have Entered Does Not Exist.";
+  get = cont();
+   if(get == 6)
+  goto VINOD;
+ }
+ else if(v=='A'||v=='a')
+ {
+  cout<<"\nENTER ONLY CITY AREA NAME IN CAPITAL LETTERS\n\t";
+  cin>>choice;
+  int k=0;
+  for(i=0;i<loop;i++)
+  {
+
+   if(choice[0]==s[i].place[0] && choice[1]==s[i].place[1] && choice[2] == s[i].place[2])
+    {r=0;k++;
+    if(k>1 && k%2==0)  //SEE F
+      {
+       cout<<"\nPRESS ENTER TO PROCEDE";e=getch();
+       if(e==13)
+	{title();}
+      }
+
+    s[i].placechoice();}
+  }
+  cout<<"\n"<<f<<f<<f<<f<<f<<f<<f<<f<<f<<f<<f<<f<<"  STAUS:- "<<k<<" NUMBERS FOUND  "<<f<<f<<f<<f<<f<<f<<f<<f<<f<<f<<f<<f;
+  if(r!=0)
+  cout<<"\nThe CITY AREA NAME "<<choice<<" You Have Entered Does Not Exist.";
+  get = cont();
+   if(get == 6)
+  goto VINOD;
+ }
+ else if(v=='F'||v=='f')
+ {
+  cout<<"\nENTER  FIRST CHARACTER OF NAME ONLY IN CAPITAL LATTER\n\t";
+  cin>>ch;
+  int k=0;
+  for(i=0;i<loop;i++)
+  {
+
+   if(ch==s[i].nm[0])
+    {
+
+     r=0;k++;
+     if(k>=1 && k%2==0)      // STARTING WITH K=1& THEN MULTIPLE OF 2
+      {
+       cout<<"\nPRESS ENTER TO PROCEDE";e=getch();
+       if(e==13)
+	{title();}
+      }
+
+       s[i].nmchoice();
+    }
+  }
+  cout<<"\n"<<f<<f<<f<<f<<f<<f<<f<<f<<f<<f<<f<<f<<"  STAUS:- "<<k<<" NUMBERS FOUND  "<<f<<f<<f<<f<<f<<f<<f<<f<<f<<f<<f<<f;
+  if(r!=0)
+  cout<<"\nThe CHARACTER "<<ch<<" You Have Entered Does Not Exist OR NOT IN CAPITAL.";
+  get = cont();
+   if(get == 6)
+  goto VINOD;
+ }
+ else if(v=='P' || v=='p')
+ {cout<<"\n\t\tTHIS CHOICE IS NOT AVAILABLE";
+ /*{
+  cout<<"\nENTER  THE NUMBER\n\t";
+  cin>>ch;
+  int k=0;
+  for(i=0;i<loop;i++)
+  { int find =0;
+   for(int in = 0;in<14;in++)
+       if(ch[in] == s[i].fone1[in+3] || ch[in]== s[i].fone2[in+3])
+
+      { find==1;}
+
+    if(find == 1)
+     {
+
+      r=0;k++;
+      if(k>=1 && k%2==0)      // STARTING WITH K=1& THEN MULTIPLE OF 2
+       {
+	cout<<"\nPRESS ENTER TO PROCEDE";e=getch();
+	if(e==13)
+	 {title();}
+       }
+
+	s[i].nmchoice();
+     }
+
+  }
+  cout<<"\n"<<f<<f<<f<<f<<f<<f<<f<<f<<f<<f<<f<<f<<"  STAUS:- "<<k<<" NUMBERS FOUND  "<<f<<f<<f<<f<<f<<f<<f<<f<<f<<f<<f<<f;
+  if(r!=0)
+  cout<<"\nThe CHARACTER "<<ch<<" You Have Entered Does Not Exist OR NOT IN CAPITAL.";
+  get = cont();
+   if(get == 6)*/
+   getch();
+  goto VINOD;
+ }
+
+
+ else if(v=='D'||v=='d')
+  {
+   for(i=0;i<loop;i++)
+   {
+   if(i>1 && i%2==0 )
+      {
+       cout<<"\nPRESS ENTER TO PROCEDE";e=getch();
+       if(e==13)
+	{title();}
+      }
+    // else
+   s[i].nmchoice();
+   }
+  cout<<"\nSTAUS:- "<<i<<" NUMBERS FOUND";
+  get = cont();
+   if(get == 6)
+  goto VINOD;
+  }
+
+ else
+  {
+  cout<<"\nPLEASE ENTER CHOICE No.like a/A/b/B/c/C/d/D/e/E/f/F  YOU FOOL";
+  getch();
+  start();
+  }
+
+}
+void dir :: nmchoice()
+{
+
+  cout<<nm<<" "<<snm<<"  \n"<<post<<endl<<place<<" "<<ct<<"\n\t\t\t\tPHONE1: "<<std<<"-"<<fone1<<"    MOBILE:"<<mobile<<"\n\t\t\t\tPHONE2: "<<std<<"-"<<fone2<<endl<<endl;
+
+}
+void dir :: snmchoice()
+{
+
+  cout<<snm<<" "<<nm<<"  \n"<<post<<endl<<place<<" "<<ct<<"\n\t\t\t\tPHONE1: "<<std<<"-"<<fone1<<"    MOBILE:"<<mobile<<"\n\t\t\t\tPHONE2: "<<std<<"-"<<fone2<<endl<<endl;
+
+}
+void dir :: ctchoice()
+{
+
+  cout<<ct<<" "<<place <<" \n"<<nm<<"  "<<snm<<endl<<post<<"\n\t\t\t\tPHONE1: "<<std<<"-"<<fone1<<"    MOBILE:"<<mobile<<"\n\t\t\t\tPHONE2: "<<std<<"-"<<fone2<<endl<<endl;
+
+}
+void dir :: placechoice()
+{
+  cout<<place<<" "<<ct<<" \n"<<nm<<"  "<<snm<<endl<<post<<endl<<"\t\tPHONE1: "<<std<<"-"<<fone1<<"\n\t\t\t\tPHONE2: "<<std<<"-"<<fone2<<"\tMOBILE:"<<mobile<<endl<<endl;
+
+}
+
+char option()
+{
+ int v;
+ cout<<"\t\nENTER YOUR WAY TO FIND OUT PHONE NO.(n/N...d/D etc.)\n\n";
+ cout<<"  N* By Typing Name"<<" \tS* By Typing Surname\n\n"
+     <<"  C* By Typing City"<<" \tA* By Typing Area\n\n"
+     <<"  F* By Typing First Character of Name\n\n"
+     <<"  P* By Typing Phone No..\n\n"
+     <<"  D* Want To See Whole Teliphone Directory List\n\n\t";
+ v=getch();
+ if(v==27)
+ {
+  closegraph();
+  exit(0);
+ }
+ return (v);
+}
+void title (void)
+{
+ clrscr();
+ char f=1,d=3;
+ for(int i=0;i<80;i++)
+ cout<<d;
+ cout<<"********************************************************************************";
+ cout<<"************************** TELIPHONE  DIRECTORY ********************************";
+ cout<<"********************************************************************************"
+     <<"*****************                                               *****************"
+     <<"*************                                                    **************";
+ cout<<"***********    COPYWRITE 2002 VINOD KOTIYA .ALL RIGHTS UNRESERVED   ************";
+ cout<<"*************                                                     **************";
+ for(i=0;i<80;i++)
+ cout<<f;cout<<endl<<endl;
+}
+
+
+void welcome()
+{ char l=177;
+ _setcursortype(_NOCURSOR);
+ cout<< "\n\n\n\n\n\n\t\tWELCOME TO INTERACTIVE TELIPHONE DIRECTORY";
+ cout<<"\n\n\n\n\n\n\n\n\t     NOW LOADING...............................\n\t\t\t";
+ for(int k=0;k<10;k++)
+ {
+  cout<<l;
+  delay(500);
+ }
+ for( k=0;k<20;k++)
+ {
+  cout<<l;
+  delay(200);
+ }
+ cout<<l<<l<<l<<l;
+ _setcursortype(_NORMALCURSOR);
+}
+void start()
+{
+ title();
+ char r;
+ //setbkcolor(MAGENTA);
+ cout<<"\nENTER YOUR CHOICE\n\n\n";
+ cout<<" A* OPEN DIRECTORY  (press Enter or A)\n\n";
+ cout<<" B* HELP  (press B)\n\n";
+ cout<<" C* ABOUT... PROGRAM  (press C)\n\n";
+ cout<<" D* ABOUT... ME    (press D)\n\n\t\t\t";
+ r = getche();
+ if(r==13 ||r=='a'||r=='A')
+ {
+  title();
+  dir d;
+  d.data();
+ }
+ else if(r=='b'||r=='B')
+ {
+  help();
+  start();
+ }
+ else if(r=='c'||r=='C')
+ {
+  aboutp();
+  start();
+ }
+ else if(r=='d'||r=='D')
+ {
+  aboutm();
+  start();
+  }
+  else if(r==27)
+  { closegraph();
+    exit(0);
+  }
+  else
+  { closegraph();
+  exit(0);
+  }
+}
+void help()
+{title();
+ cout<<"\n\n\t\t\t\tHELP\n\nPLEASE On The Caps Lock key FOR EASILY ACCESS \n\n";
+ cout<<"PLEASE FOLLOW THE INSTRUCTION GIVEN IN PROGRAM\n\nYOU CAN CLOSE THE PROGRAM BY PRESSING Esc";
+ cout<<"\n\n\n\n\t\tpress Any Key To Exit from Help";
+ getch();
+}
+void aboutp()
+{ title();
+ cout<<"\n\t\t\t\tABOUT...PROGRAM\n\n THIS PROGRAM IS CREATED By  VINOD KOTIYA \n DATA ENTRY IS DONE By AMIT KOTIYA";
+ cout<<"\n DATE OF CREATION :- 16-Jun-2002 to 17-Jun-2002";
+ cout<<"\n EXE TYPE :- Dos";
+ cout<<"\n PROGRAMMING LANGUAGE USED :- C++\n"
+     <<" PROGRAM SIZE ABOUT:- 70 KB\n";
+ cout<<"\n THIS PROGRAM CONTAINS NAME'S ,TEL No.,Mobile No. & Addresses\n";
+
+ cout<<"\n\t\t\tpress Any Key to return";
+ getch();
+}
+void aboutm()
+{  title();
+ cout<<"\t\t\t\tABOUT...ME\n\n NAME :- VINOD KOTIYA"
+     <<"\n\ts/o SHRI R.K.KOTIYA"
+     <<"\n NATIONALITY :- INDIAN"
+     <<"\n\n B.E.Second Year in INFORMATION TECHNOLOGY"
+     <<"\n BHOPAL ENGINEERING COLLEGE "
+     <<"\n\n Address:- S-2 ,SHRIMAYA APARTMENT SECTOR -B/363,\n"
+     <<"   SARVDHARM COLONY KOLAR ROAD BHOPAL (M.P.)"
+     <<"\n   PHONE:- +91-0755-794428";
+ cout<<"\n\t\t\tpress any Key to return";
+ getch();
+}
+int cont()
+{
+ char w;
+ cout<<"\nAre You Want to SEARCH Again ?(Y/N)-";
+ w=getche();
+ if(w=='y' || w=='Y'|| w==13)
+ return(6);
+ else
+ exit(0);
+}
+
+

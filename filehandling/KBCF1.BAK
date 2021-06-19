@@ -1,0 +1,88 @@
+#include<fstream.h>
+#include<conio.h>
+#include<string.h>
+#include<iomanip.h>
+
+class question
+{
+  int w,b;
+  char que[200],ans;
+public:
+ char* getque();
+ char getans();
+ void setque(char[]);
+ void setans(char);
+ void setdata();
+ void showdata();
+};
+
+char* question::getque()
+{
+ return que;
+}
+char question::getans()
+{
+ return ans;
+}
+void question::setque(char pra[200])
+{
+  strcpy(que,pra);
+}
+void question::setans(char utt)
+{
+ ans = utt;
+}
+void question::setdata()
+{
+ cout<<"\nEnter question";
+ cin.getline(que,200);
+ cout<<"\nEnter ans";
+ cin>>ans;
+}
+void question::showdata()
+{
+ cout<<"\nque: "<<setw(5)<<que;
+ cout<<"\nans: "<<setw(5)<<ans<<endl;
+}
+//overloaded << to handle the output of square objects
+ostream& operator << (ostream& s, question x)
+{
+ //setw is used to give a consistent format in the file
+ return s<<setw(5)<<x.getque()<<setw(5)<<x.getans()<<endl;
+}
+
+//overloaded >>  to input of square objects
+istream& operator >> (istream& s,question &x)
+{
+ char que_in[200],ans_in;
+ //because i/p stream is delimited with white spaces,we can
+ //i/p all 2 attributes at ones
+ s>>que_in>>ans_in;
+ x.setque(que_in);
+ x.setans(ans_in);
+ return s;
+}
+void main()
+{
+ clrscr();
+ question obj[3];
+ fstream iofile;
+
+ iofile.open("c:\\cdata\\objin.vin", ios::in | ios::out );
+ for(int i=0;i<3;i++)
+ {
+  obj[i].setdata();
+  iofile<<obj[i];
+ }
+ iofile.seekg(0);
+ question new_obj[3];
+ //readthe square data back from the file  . states are same as previous sq
+
+ for(i=0;i<3;i++)
+ {
+  iofile>>new_obj[i];
+  new_obj[i].showdata();
+ }
+ new_obj[2].showdata();
+ getch();
+}

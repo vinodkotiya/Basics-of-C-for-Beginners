@@ -1,0 +1,21 @@
+#include <stdlib.h>
+#include <iostream.h>
+#include<string.h>
+
+int main(void)
+{  char cmd[8] = {"cd c:\\"},usr[20] = {"md "};
+   system(cmd);
+   system("md c:\\root");
+   system("cd c:\\root");
+   system("md usr");
+   system("md bin");
+   system("md dev");
+   system("md tmp");
+   system("cd usr");
+   cout<<"Please enter your login name \n";
+   cin>>cmd;
+   system(strcat(usr,cmd));
+//   getch();
+   return 0;
+
+}

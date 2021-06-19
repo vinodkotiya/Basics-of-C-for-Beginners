@@ -1,0 +1,43 @@
+#include<iostream.h>
+#include<conio.h>
+void main()
+{
+int a[3][2],b[2][3],m[3][3];//a (mXp) *  b (pXn) = m (mXn)
+int i,j,temp;
+clrscr();
+cout<<"Enter 1st matrtx of 3 X 2\n";
+for(i=0;i<3;i++)
+  for(j=0;j<2;j++)
+    cin>>a[i][j];
+cout<<"\nEnter 2nd matrixof 2 X 3\n";
+for(i=0;i<2;i++)
+  for(j=0;j<3;j++)
+   cin>>b[i][j];
+for(i=0;i<3;i++)
+  {for(j=0;j<2;j++)
+    cout<<a[i][j]<<"\t";
+    cout<<endl;
+  }
+ cout<<"\n************************";
+for(i=0;i<2;i++)
+  {for(j=0;j<3;j++)
+   cout<<b[i][j]<<"\t";
+   cout<<endl;
+  }
+for(i=0;i<3;i++)    //i<m
+  for(j=0;j<3;j++)  //i<n
+  {m[i][j] = 0;
+   for (int k = 0;k<2;k++) //k<p
+    m[i][j]= m[i][j] + a[i][k] * b[k][ji];
+//     m[i][j]=temp;
+   }
+
+cout<<"\nMultiplication of matrices is 3 X 3\n";
+for(i=0;i<3;i++)
+  {for(j=0;j<3;j++)
+    cout<<m[i][j]<<"\t";
+   cout<<endl;
+  }
+
+getch();
+}

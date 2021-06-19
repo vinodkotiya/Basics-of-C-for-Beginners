@@ -1,0 +1,140 @@
+//#include <fstream.h>
+//#include <conio.h>
+#include<stdlib.h>
+int encrypt()
+{
+   clrscr();
+   int opt,i, j, x, value, num[63];
+    while (1)
+	{
+	cout<<"\rEnter 1 for Offset Cipher encryption or 2 for Substitution Cipher encryption: ";
+	opt=getch() ;
+	if ((opt!='1') && (opt!='2'))
+	  {
+	   cout<<"\r\aIllegal entry! Valid choices are either 1 or 2 ! Press any key to continue...  ";
+	   getch() ;
+	  }
+	else break;
+	}
+// 'opt'= 1 i.e. 6 means the encrytion Offset (assumed) shifting by value will done .......
+   if (opt=='1')
+       {
+	cout<<"\n\nEnter the value by which the shifting of characters is to be made : ";
+	cin>>value;
+	if ((value<0) || (value>128))
+	 {
+	 cout<<"\n\aPlease enter any integer between 0 to 128 otherwise the risk of data corruption/loss looms large !\n";
+	 getch();
+	 return (0) ;
+	  }
+       }
+
+   char srcfile[30],destfile[30];
+   cout<<"\nEnter the name of the source filename(eg: c:\vin.txt ) -";
+   cin >> srcfile;
+   cout<<"\n\nEnter the name of the target file to store the encrypted data - " ;
+   cin>>destfile;
+   ifstream in(srcfile,ios::binary); ////// open source file
+   if(in.fail())
+   {
+    cout<<"\nfile can't be opened";
+    getch();
+    return(0);
+   }
+   ofstream out(destfile,ios::binary); /////// open destination file
+   if(out.fail())
+   {
+    cout<<"\nfile can't be created";
+    getch();
+    return(0);
+   }
+ char e,c;
+ /////////////////////////////////////////////////////////////////////////
+	    //****************** TRANSPOSITION OR OFFSET CYPHER **********
+ /////////////////////////////////////////////////////////////////////////
+ if (opt=='1')
+    {
+       out.put(6);       //enter 6 for offset in file
+       // if  opt=1 i.e.6 and then the offset encryption is
+       // only the scanned 'value' should be entered in the target file .......
+       out.put(value);
+
+	while (!in.eof())
+	{
+	in.get(c);	// get the character in 'c' .......
+	e=c+value;	// offset it i.e. advance it by 'value' .......
+	cout<<e;
+	out.put(e);	// put the advanced value of 'd' in file
+	}
+	cout<<"\nComplete";
+	getch();
+     }
+   /////////////////////////////////////////////////////////////////////////
+	    //****************** SUBSTITUTION CYPHER **********
+   /////////////////////////////////////////////////////////////////////////
+  else
+    {
+       out.put(8);     //enter 8 for substitution cypher in file
+       /*Now, when it is going to be Substitution encryption, let's generate
+	63 random numers at all. Out of all these 63, 26 are for Capital letters,
+	26 for small letters, 10 for numeric digits and one is a special character
+	which will be used to substitute the exclusive character which does not
+	comes under the above category, in some tactical way .......*/
+
+	for (i=0; i<63; i++)
+	{
+	 while (1)
+	  {
+	   num[i] = random (250) ;    //get rndm no
+	   for (j=0,x=0; j<i; j++)
+	    {
+	     if (num[i]==num[j]) {x=1; break;} //if two characters are equal then again get new rndm character
+	    }
+	   if (x==0) break;
+	  } //eow
+	}  //eof
+       // All these 63 generated random numbers should be now stored consecutively in the target fiue .......
+
+       for (i=0; i<63; i++)
+       {
+	c=num[i] ;
+	out.put(c) ;
+       }
+      // Now, the real encryption, i.e. the conversion is going to take place .......
+
+      // means Substitution encryption .......
+	while (!in.eof())
+	{
+	  in.get(c);
+	  i=65;
+	  if ((c>=65) && (c<=90)) // means 'c' is a Capital letter .......
+	   {			 // then 'e' should take the value from
+	   e=num[c-i] ;          // num[0] to num[25], depending upon
+	   out.put(e) ; continue ; // its position from the beginning .......
+	   }
+	   i=71;
+	  if ((c>=97) && (c<=122)) // means 'c' is a small letter .......
+	   {			  // and then 'e' should take a value .......
+	   e=num[c-i] ;          // from num[26] to num[51], purvanusaar .......
+	   out.put(e) ; continue;
+	   }
+	   i=4;
+	  if ( (c>=48) && (c<=57)) // means 'c' is a numeric digit .......
+	   {			  // and then 'e' is going to take a .......
+	   e=num[c+i] ;           // value from num[52] to num[61] .......
+	   out.put(e) ; continue ;
+	   }
+	  e=num[62] ;   // if all the above conditions become*/
+			// false, num[62] gets substituted  .......
+	  out.put(e) ;  // following which the concerned special .......
+	  out.put(c) ;  // character is also dumped in the file  .......
+
+
+       }//end of while
+
+   } //end of else
+
+  in.close();
+  out.close();
+  return 0;
+}

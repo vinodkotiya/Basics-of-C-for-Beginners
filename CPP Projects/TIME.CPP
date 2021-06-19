@@ -1,0 +1,24 @@
+#include<iostream.h>
+#include <time.h>
+#include <stdio.h>
+#include <dos.h>
+#include<conio.h>
+
+int main()
+{
+   clrscr();
+   time_t t;
+
+   t = time(NULL);
+   cout<<"The number of seconds since January 1, 1970 is "<<t;
+   getch();
+   cout<<"\nPress a key to start timer";
+   getch();
+   t = time(NULL);
+   cout<<"\nPress a key to stop timer";
+   getch();
+   cout<<"\nTotal Seconds Elapsed : "<<time(NULL)-t;
+   getch();
+   return 0;
+
+}

@@ -1,0 +1,1748 @@
+Solution no 1.
+
+      #include<iostream.h>
+      #include<conio.h>
+      void main()
+      {
+      int i,j,n;
+      clrscr();
+      cout<<"\n Enter the number of range :-";
+      cin>>n;
+      for(i=1;i<=n;i++)
+      {
+      	for(j=2;j<i;j++)
+      	{
+          	if(i%j==0)
+              break;
+            }
+         if(i==j)
+          cout<<i<<",\t";
+      }
+    getch();
+      }
+
+
+Solution no 2.
+
+      #include<iostream.h>
+      #include<conio.h>
+      void main()
+      {
+      int n,a,d,c;
+      clrscr();
+      cout<<"Enter the four digit number=";
+      cin>>n;
+      a=n%10;
+      d=(n/1000)%10;
+      c=a+d;
+      cout<<"\nfirst digit "<<d<<" & last digit  "<<a<<"sum of number= "<<c;
+getch();
+}
+
+Solution no 3.
+
+      #include<iostream.h>
+      #include<conio.h>
+      void main()
+{
+      int dd,mm,yy;
+      clrscr();
+      cout<<"Enter the  the day in the format mm/dd/yy:";
+      a1:
+      cout<<"\n Enter the month :";
+      cin>>mm;
+      if(mm<1 || mm>12)
+      {
+      	cout<<"\n The month in valid Try again:";
+		goto a1;
+      }
+else
+      {
+		a2:
+		cout<<"\nEnter the day:";
+		cin>>dd;
+		if(dd<1 || dd>31)
+      	{
+			cout<<"\n Invalid day Try again:";
+			goto a2;
+		}
+      	else
+		{
+			a3:
+			cout<<"\n Enter the the year:";
+			cin>>yy;
+			if(yy<1000 || yy>9000)
+			{
+				cout<<"\n Invalid year try again:";
+				goto a3;
+			}
+		}
+      }
+      cout<<"\n The date entered by U is: "<< mm<<"/"<<dd<<"/"<<yy;
+        getch();
+      }
+
+
+
+Solution no.4:-
+
+      #include<iostream.h>
+      #include<conio.h>
+      void main()
+      {
+      char a;
+      clrscr();
+      cout<<"Enter any character from the keyboard : ";
+      cin>>a;
+      if(a>=97 && a<=123)
+      cout<<"Typed character is an alphabet in lowercase";
+      else
+      if(a>=65 && a<=98)
+          cout<<"Typed character is an alphabet in uppercase";
+      else
+      if(a>=48 && a<=57)
+      cout<<"It is a number";
+      else
+      cout<<"Special character";
+      getch();
+
+}
+
+Solution no.5:-
+
+      #include<iostream.h>
+      #include<conio.h>
+      void main()
+      {
+		int i,y,z,b,c=0;
+      	clrscr();
+    		cout<<" The amarstrong number are :- \n";
+      	for(i=1;i<=500;i++)
+		{
+      		y=i;
+			while(y!=0)
+			{
+      			b=y%10;
+      			c=c+(b*b*b);
+			y=y/10;
+      		}
+			if(i==c)
+				cout<<i<<endl;
+			c=0;
+		}
+		getch();
+      }
+
+
+Solution no.6(i):-
+
+      #include<iostream.h>
+      #include<conio.h>
+      #include<math.h>
+      void main()
+      {
+       int i,j,s,n=3,k=1;
+       clrscr();
+       cout<<"enter the no.";
+       cin>>i;
+       cout<<"\n  s=" <<k;
+       for(j=1;j<i;j++)
+       {
+         cout<<" "<<"+"<<k<<"/"<<pow(n,j);
+       }
+         getch();
+       }
+      
+      
+Solution no.6(ii):-
+	
+      #include<iostream.h>
+      #include<conio.h>
+      #include<math.h>
+      void main()
+      {
+      int n,i,p=1;
+      clrscr();
+      cout<<"Enter the number of series ";
+      cin>>n;
+      cout<<"\n\n\nS=";
+      for(i=1;i<=2*n;i=i+2)
+      {
+        cout<<"X/"<<i<<"!";
+        if(p%2==0)
+        cout<<"+";
+        else
+        cout<<"-";
+         p++;
+}
+      cout<<"...........";
+      getch();
+      }
+
+
+
+
+Solution no.6(iii):-
+
+      #include<iostream.h>
+      #include<conio.h>
+      #include<math.h>
+      void main()
+      {
+      int i,n,a;
+      unsigned int b=0;
+      clrscr();
+      cout<<"\n\n Enter the Limit of series ";
+      cin>>n;
+      cout<<"\n\n\n\nS = ";
+      for(i=1;i<=n;i++)
+      {
+      a=pow(i,2);
+      cout<<a<<"+";
+      b=b+a;
+      }
+      cout<<"\n\n\n\n Sum of series "<<b;
+         getch();
+      }	
+  
+  
+  Solution no.7(i):-
+  
+      #include<iostream.h>
+      #include<conio.h>
+      #include<math.h>
+      void main()
+      {
+      int i,n,a;
+      unsigned int b=0;
+      clrscr();
+      cout<<"\n\n Enter the Limit of series ";
+      cin>>n;
+      cout<<"\n\n\n\nS = ";
+      for(i=1;i<=n;i++)
+      {
+      a=pow(i,2);
+      cout<<a<<"+";
+      b=b+a;
+      }
+      cout<<"\n\n\n\n Sum of series "<<b;
+     getch();
+}
+
+Solution no.7(ii):-
+      
+      #include<iostream.h>
+   	#include<conio.h>
+      void main()
+      {
+         int i,j;
+         clrscr();
+         for(i=65;i<70;i++)	
+         {
+         for(j=65;j<=i;j++)
+         {
+         cout<<"  "<<(char)j;
+		   }
+   		cout<<"\n";
+         }
+         getch();
+ 	}
+
+Solution no.8:-
+
+      #include<iostream.h>
+      #include<conio.h>
+      void main()
+      {
+      unsigned int a,b=1;
+      int n,i;
+      clrscr();
+      cout<<"\n Enter the number for factorial ";
+      cin>>n;
+      for(i=1;i<=n;i++)
+      {
+      a=b*i;
+      cout<<b<<"*"<<i<<"="<<a<<endl;
+      b=a;
+      }	
+      cout<<"\n Factorial of no "<<n<<" is"<<a;
+   getch();
+      }
+
+
+Solution no.9:-
+
+      #include<iostream.h>
+      #include<conio.h>
+      void main()
+      {
+      long int i,a=0,b=0,c=1,n;
+      clrscr();
+      cout<<"range of fib series ";
+      cin>>n;
+      for(i=0;i<n;i++)
+      {
+			cout<<c;
+      a=b;
+      b=c;
+      c=a+b;
+      cout<<",";
+      }
+      getch();
+}
+
+Solution no.10:-
+
+      #include<iostream.h>
+      #include<conio.h>
+      void main()
+      {
+      int a[5],b[5],c[10],i,j;
+      clrscr();
+      cout<<"Enter the value of first array: ";
+      for(i=0;i<5;i++)
+      cin>>a[i];
+      cout<<"\n Enter the value of second array : " ;
+      for(i=0;i<5;i++)
+      cin>>b[i];
+      for(i=0;i<5;i++)
+      c[i]=a[i];
+      for(j=0;j<5;j++)
+      {
+      c[i++]=b[j];
+      }
+      for(i=0;i<9;i++)
+      {
+      	for(j=i+1;j<=9;j++)
+      {
+          	if(c[i]>c[j])
+              {
+              int temp;
+              temp=c[i];
+              c[i]=c[j];
+              c[j]=temp;
+              }
+           }
+      }
+		for(j=0;j<10;j++)
+      cout<<"\n"<<c[j];
+  	getch();
+  	}
+
+
+Solution no.11:-
+
+      #include<stdio.h>
+      #include<conio.h>
+      #include<iostream.h>
+      void main()
+      {
+	  	int arr1[5], arr2[5], i, j, n;
+	  	clrscr();
+      	for(i=0;i<5;i++)
+      	{
+		cout<<"\n\t Enter roll number : ";
+		cin>>arr1[i];
+		cout<<"\n\t Enter marks      : ";
+		cin>>arr2[i];
+		}
+		for(i=0;i<5;i++)
+		{
+      cout<<"\n\t Roll Number : "<<arr1[i]<<" Marks : "<<arr2[i];
+		}
+		for(i=0;i<5-1;i++)
+		{
+		   for(j=i+1;j<5;j++)
+			{
+			if(arr2[j]>arr2[i])
+			{
+				int temp1=arr2[i];
+				int temp2=arr1[i];
+				arr2[i]=arr2[j];
+				arr1[i]=arr1[j];
+				arr2[j]=temp1;
+				arr1[j]=temp2;
+				}
+			}
+		}
+		cout<<"\n\n\t After Sorting \n\n";
+		for(i=0;i<5;i++)
+		{
+      cout<<"\n\t Roll Number : "<<arr1[i]<<" marks : "<<arr2[i];
+		}
+		getch();
+      }
+      
+
+
+Solution no.12:-
+
+	#include<iostream.h>
+      #include<conio.h>
+      void main()
+      {
+      int i,a=0,c[10]={0},e;
+      unsigned int n;
+      double b;
+      clrscr();
+      cout<<"\n Enter the Decimal number : ";
+      cin>>n;
+      cout<<"\n Enter the Base of(2,8,16) :";
+      cin>>e;
+      b=n;
+      if(e==2)
+      {
+       for(i=0;n!=0;i++)
+       {
+         c[i]=n%2;
+         n=n/2;
+   a++;
+         }
+         cout<<"Decimal no. is"<<b<<" then binary is";
+         for(i=a-1;i>=0;i--)
+         cout<<c[i];
+      }
+      if(e==8)
+      {
+        for(i=0;n!=0;i++)
+        {
+        c[i]=n%8;
+        n=n/8;
+        a++;
+        }
+        cout<<"Demical no.is"<<b<<"then Octal is";
+        for(i=a-1;i>=0;i--)
+        cout<<c[i];
+      }
+      if(e==16)
+      {	
+      	for(i=0;n!=0;i++)
+      	{
+      		c[i]=n%16;
+      		n=n/16;
+      	a++;
+      	}
+      	cout<<"Demical no is"<<b<<" then hexa is ";
+      	for(i=a-1;i>=0;i--)
+      	switch(c[i])
+			{
+      	case 10:
+      	cout<<"A";
+      	break;
+      	case 11:
+      	cout<<"B";
+      	break;
+      	case 12:
+      	cout<<"C";
+      	break;
+      	case 13:	
+      	cout<<"D";
+      	break;
+      	case 14:	
+      	cout<<"E";
+      	break;
+      	case 15:
+      	cout<<"F";
+      	break;
+      	default:
+      	cout<<c[i];
+          }
+      }    
+      getch();
+}
+
+
+Solution no.13:-
+
+	#include<iostream.h>
+	#include<conio.h>
+	void main()
+	{
+		int a[2][2],b[2][2],c[2][2]={0},i,j,k;
+		clrscr();
+		cout<<"FIRST MATRIX ";
+		for(i=0;i<2;i++)
+		{
+			for(j=0;j<2;j++)
+			{
+      cout<<"\n Enter element in "<<i<<" row & "<<j<<" column :";
+				cin>>a[i][j];
+			}
+		}
+		cout<<"\n SECOND MATRIX \n";
+		for(i=0;i<2;i++)
+		{
+			for(j=0;j<2;j++)
+			{
+      cout<<"\n Enter element in "<<i<<" row & " <<j<< " column :";
+				cin>>b[i][j];
+			}
+		}
+		for(i=0;i<2;i++)
+		{
+			for(j=0;j<2;j++)
+			{
+				for(k=0;k<2;k++)
+				{
+					c[i][j]+=a[i][k]*b[k][j];
+				}
+			}
+		}
+    		cout<<" \n Multiplication of Matrix \n";
+		for(i=0;i<2;i++)
+		{
+			for(j=0;j<2;j++)
+			{
+				cout<<"\t"<<c[i][j];
+			}
+			cout<<endl;
+		}
+		getch();
+	}
+
+
+Solution no.14:-
+	
+	#include<iostream.h>
+      #include<conio.h>
+      #include<stdio.h>
+      void main()
+      {
+      char str[80];
+      int a=0,b=0,d=0,s=0,i;
+      clrscr();
+      cout<<"Enter the text :";
+      gets(str);
+      for(i=0;str[i]!='\0';i++)
+      {
+      if(str[i]>=65 && str[i]<=90)
+      a++;
+      else
+      	if(str[i]>=97 && str[i]<=122)
+    				 	b++;
+    		    	else
+      if(str[i]>=48 && str[i]<=57)
+    					d++;
+        		else
+s++;
+             }
+      cout<<"Number of Capital Characters : "<<a<<endl;
+      cout<<"Number of Small Characters : "<<b<<endl;
+      cout<<"Number of Digits in string : "<<d<<endl;
+      cout<<"Number of Special Characters : "<<s;
+      getch();
+      }
+      
+      
+
+Solution no.15:-
+
+      #include<iostream.h>
+      #include<conio.h>
+      void main()
+      {
+      int a[10],n,i,m,b=9,flag=0;
+      clrscr();
+      for(i=0;i<10;i++)
+      {
+      cout<<" Enter the element "<<i+1<< " of array :";
+      cin>>a[i];
+      }
+      cout<<"Enter the element to be searched in the array : ";
+      cin>>n;
+      i=0;
+      while(i<=b)
+      {
+      m=(i+b)/2;
+          if(n==a[m])
+          {
+             flag=1;
+             break;
+           }
+          else
+          {
+              if(a[m]>n)
+              b=m-1;
+    	else
+              i=m+1;
+           }
+        }
+        if(flag==1)
+cout<<"\n number exists in the list at location=a["<<m+1<<"]";
+else
+      cout<<"\n your number does not exists in the list";
+  		getch();
+  	}
+
+
+Solution no.16:-
+
+      #include<iostream.h>
+      #include<conio.h>
+      void main()
+      {
+      int a[10],n,i,b;
+      clrscr();
+      for(i=0;i<10;i++)
+      {
+      cout<<"\n Enter the element "<<i+1<<"of array:";
+cin>>a[i];
+      }
+      cout<<"\n Enter the  number to be inserted: ";
+      cin>>n;
+      cout<<"\n Specify the  position of array :";
+      cin>>b;
+      b=b-1;
+      for(i=0;i<10;i++)
+      {
+      	if(i==b)
+      	{
+      a[i]=n;
+      	}
+      }
+      cout<<"\n New Array : \n";
+      for(i=0;i<10;i++)
+      cout<<a[i]<<"\t";
+      getch();
+      }
+
+
+Solution no.17:-
+
+ 	#include<iostream.h>
+      #include<conio.h>
+      void main()
+      {
+      char a[10];
+      int i,j,flag=0,l=0;
+      clrscr();
+      cout<<"\n Enter the Name : ";
+      cin>>a;
+      for(i=0;a[i]!='\0';i++)
+      l++;
+      for(i=0,j=l-1;i<l,j>=0;i++,j--)
+       {
+       if(a[i]!=a[j])
+        {
+        flag=1;
+        cout<<"\n NAME IS NOT PALINDROM";
+        break;
+        }
+       }
+       if(flag==0)
+       cout<<"\n NAME IS PALINDROM";
+      getch();
+      }
+
+
+Solution no.18:-
+
+      #include<iostream.h>
+      #include<conio.h>
+      #include<stdio.h>
+      void main()
+      {
+      char a[50],i;
+      int l=1;
+      clrscr();
+      cout<<"Enter the any text : ";
+      gets(a);
+      for(i=0;a[i]!='\0';i++)
+      {
+        if(a[i]==' ')
+        {
+         l++;
+         }
+      }
+      cout<<"\n Number of words in the string = "<<l;
+      getch();
+      }
+
+
+Solution no.19(a):-
+
+      #include<iostream.h>
+      #include<conio.h>
+      void swap(int *x,int *y);
+      void main()
+      {
+      int a,b;
+      clrscr();
+      cout<<"Enter the two number :";
+      cin>>a>>b;
+      cout<<"Before interchange the value a="<<a<<"&      b="<<b<<endl;
+        swap(&a,&b);
+      cout<<"After interchange the value a="<<a<<" & b="<<b;
+      getch();
+      }
+      void swap(int *x,int *y)
+{
+      int t;
+      t=*x;
+      *x=*y;
+      *y=t;
+      }
+
+Next method:-
+      #include<iostream.h>
+      #include<conio.h>
+      void swap(int &,int &);
+      void main()
+{
+      int a,b;
+      clrscr();
+      cout<<"Enter the two number :";
+      cin>>a>>b;
+      cout<<"Before interchange the value a="<<a<<" & b="<<b<<endl;
+      swap(a,b);
+      cout<<"After interchange the value a="<<a<<" & b="<<b;
+      getch();
+      }
+      void swap(int &x,int &y)
+      {
+      int t;
+      t=x;
+      x=y;
+      y=t;
+      }
+
+
+
+Solution no.19(b):-
+
+      #include<iostream.h>
+      #include<conio.h>
+      double power(int x,int y);
+      void main()
+      {
+      int a,b;
+      double ans;
+      clrscr();
+      cout<<"Enter the base ";
+      cin>>a;
+      cout<<"Enter the power ";
+      cin>>b;
+      ans=power(a,b);
+      cout<<"Base is"<<a<<"power is"<<b<<"then answer is"<<ans;
+    getch();
+    	}
+      double power(int x,int y)
+    	{
+    		int i;
+    		double c=1;
+          for(i=1;i<=y;i++)
+          {
+          c=x*c;
+          }
+    return c;
+    }
+
+
+Solution no.19(c):- 
+
+      #include<iostream.h>
+      #include<conio.h>
+      int abs(int x);
+      void main()
+      {
+      int n,a;
+      clrscr();
+      cout<<"Enter the number : ";
+      cin>>n;
+      a=abs(n);
+      cout<<"This value is absolute :"<<a;
+      getch();
+      }
+      int abs(int x)
+      {
+      if(x>0)
+      return x;
+		else
+      return –(x);
+      }
+
+
+
+Solution no.19(d):- 
+
+      #include<iostream.h>
+      #include <stdio.h>
+      #include<conio.h>
+      int len(char name1[20]);
+      void main()
+      {
+      char name[20];
+      int p;
+      clrscr();
+      cout<<"Enter the your name  : ";
+      gets(name);
+      p=len(name);
+      cout<<"\n Length is "<<p;
+      getch();
+      }
+      int len(char name1[20])
+      {
+      int l=0,i;
+      for(i=0;name1[i]!=0;i++)
+      l++;
+      return l;
+      }
+
+
+Solution no.9(e):-
+	
+      #include<iostream.h>
+      #include<conio.h>
+      double factorial(int x);
+      void main()
+      {
+      int a;
+      double ans;
+      clrscr();
+      cout<<"Enter the number ";
+      cin>>a;
+      ans=factorial(a);
+      cout<<"\n Your number is“<<a<<”& factorial is "<<ans;
+    getch();
+    	}
+      double factorial(int x)
+    	{
+    	    	double b=1;
+            if(x==1)
+            {
+            return (b);
+            }
+     	 else
+           {
+             b=x*factorial(x-1);
+     		  return b;
+     		}
+          }
+
+
+
+Solution no.19(f):-
+
+      #include<iostream.h>
+      #include<conio.h>
+      #include<stdio.h>
+      void upper(char name1[20]);
+      void main()
+      {
+      char name[20];
+		clrscr();
+      cout<<"Enter the your name  : ";
+      gets(name);
+      upper(name);
+      getch();
+      }
+      void upper(char name1[20])
+      {
+      int i;
+       for (i=0; name1[i]!=0;i++)
+       	{
+            if ((name1[i] >= 'a') && (name1[i] <= 'z'))
+		  {
+               name1[i] =name1[i]-32;
+               }
+    }
+         cout<<"your name is : "<<name1;
+      }
+
+Solution no.20:-
+      
+      #include<iostream.h>
+      #include<conio.h>
+      void main()
+      {
+      int arr[20],i,j=0,k,brr[20],flag=1;
+      static int n;
+      clrscr();
+      for(i=0;i<20;i++)
+      {
+      cout<<"\n Enter the ["<<i+1<<"] element : ";
+      cin>>arr[i];
+      }
+      for(i=0;i<20;i++)
+ 	 {
+          if(arr[i]==0)
+      	{
+                brr[j++]=i;
+                n++;
+           }
+        }
+        j=0;
+        for(i=0;i<20;i++)
+   		{
+             if(i==brr[j]|| arr[i]==0)
+              {
+                    flag=1;
+                   if(i==brr[j])
+     	            flag=0;
+                    k=i;
+                   while(arr[k]==0)
+                   {
+                       k++;
+                    }
+                arr[i]=arr[k];
+                arr[k]=0;
+                if(flag==0)
+          			j++;
+         }
+     	  }
+      cout<<"\n";
+      for(j=0;j<20-n;j++)
+      cout<<","<<arr[j];
+      getch();
+      }
+
+
+Solution no.21:-
+      
+      #include<iostream.h>
+      #include<conio.h>
+      void main()
+      {
+      int a[3][3],i,j;
+      clrscr();
+      for(i=0;i<3;i++)
+      {
+      for(j=0;j<3;j++)
+      {	
+      cout<<"\n Enter the element of "<<i+1<<" row & colume "<<j+1<<" : ";
+      cin>>a[i][j];
+      	}
+      }
+      cout<<"\n DOUBLE EVERY ELEMENT OF A ARRAY \n " ;
+       for(i=0;i<3;i++)
+        {	
+      for(j=0;j<3;j++)
+          {
+          cout<<"\t"<<2*a[i][j];
+          }
+          cout<<"\n";
+       }
+        getch();
+  }
+
+Solution no.22(a):-
+
+      #include<iostream.h>
+      #include<conio.h>
+      #include<string.h>
+#include<stdio.h>
+      void main()
+{
+      char name[20],name2[20];
+      int i,l,j;
+      clrscr();
+      cout<<"enter the any string : ";
+      gets(name);
+      l=strlen(name);
+      for(j=0,i=l-1;i>=0;i--,j++)
+      {
+         name2[j]=name[i];
+         }
+       name2[j]='\0';
+         	cout<<"\n\n Reverse a string  :  ";
+      cout<<name2;
+      getch();
+      }
+
+
+Solution no.22(b):-
+
+      #include<iostream.h>
+      #include<conio.h>
+      #include<string.h>
+      #include<stdio.h>
+      void main()
+      {
+      char name[20];
+      int i,l;
+      clrscr();
+      cout<<"Enter the text : ";
+      gets(name);
+      l=strlen(name);
+      cout<<"\n\n Reverse the string :\n\n";
+      for(i=l-1;i>=0;i--)
+{
+         cout<<name[i];
+      }
+   getch();
+      }
+
+
+Solution no.23:-
+
+      #include<iostream.h>
+      #include<conio.h>
+      struct stud
+      {
+      	struct date
+		{
+      		int d1,m,y;
+		};
+      char name[20];
+      int roll,age,phy,che,math;
+      struct date d;
+      };
+      void main()
+      {
+      float tot[10],per[10];
+      int i;
+      struct stud s[10];
+      clrscr();
+      for(i=0;i<10;i++)
+      {
+      cout<<"\n Enter the name = ";
+      fflush(stdin);
+      cin>>s[i].name;
+      cout<<"\n Enter the Roll no = ";
+      cin>>s[i].roll;
+      cout<<"\n Enter the age = ";
+      cin>>s[i].age;
+      cout<<"Enter the date of birth(dd\mm\yy)=";
+      cin>>s[i].d.d1>>s[i].d.m>>s[i].d.y;
+      cout<<"\nEnter the mark of phy,che,math = ";
+      cin>>s[i].phy>>s[i].che>>s[i].math;
+      tot[i]=s[i].phy+s[i].che+s[i].math;
+      per[i]=tot[i]/3;
+      }	
+
+      clrscr();
+      cout<<"\t\t\t Result of Student \n\n";
+cout<<"Name\t\tRoll no\t Age\tDOB\t Total Mark\t Precentage\n";
+
+      for(i=0;i<10;i++)
+      {
+cout<<s[i].name<<"\t\t"<<s[i].roll<<"\t"<<s[i].age<<"\t";
+cout<<s[i].d.d1<<"-"<<s[i].d.m<<"-“<<s[i].d.y<<"  \t "<<tot[i]<<"\t\t"<<per[i];
+      cout<<"\n";
+      }
+      getch();
+}
+
+
+Solution no.24:-
+
+      #include<iostream.h>
+      #include<conio.h>
+      struct time
+      {
+      int hh,mm,ss;
+      };
+      void main()
+      {
+      struct time t1,t2;
+      clrscr();
+      void add(struct time,struct time);
+      cout<<"\n Enter the first time(hh/mm/ss) : ";
+      cin>>t1.hh>>t1.mm>>t1.ss;
+      cout<<"\n Enter the second time(hh/mm/ss) : ";
+      cin>>t2.hh>>t2.mm>>t2.ss;
+      add(t1,t2);
+      getch();
+      }
+void add(struct time t1,struct time t2)
+      {
+      struct time t3;
+       t3.hh=t1.hh+t2.hh;
+      t3.mm=t1.mm+t2.mm;
+      t3.ss=t1.ss+t2.ss;
+      while(t3.ss>=60)
+      {
+        t3.ss=t3.ss-60;
+        t3.mm++;
+     }
+     while(t3.mm>=60)
+  		{
+        t3.mm=t3.mm-60;
+        t3.hh++;
+  		}
+      while(t3.hh>24)
+      	{
+          t3.hh=t3.hh-24;
+      	cout<<”\n Next day the time will be :”;
+      }
+      cout<<"\n Hour is : "<<t3.hh<<"\n Min is :    "<<t3.mm<<"\n Sec is : "<<t3.ss;
+      cout<<"\n New time is     "<<t3.hh<<" : "<<t3.mm<<" : "<<t3.ss;
+
+}
+
+
+Solution no.25:-
+
+      #include<iostream.h>
+      #include<fstream.h>
+      #include<conio.h>
+      #include<stdio.h>
+      class bank
+      { 
+       protected:
+    		char name[20][5];
+          	char type[5];
+        public:  
+        	int noacc[5],balacc[5];
+       	void adddata();
+          void showdata();
+           void show(int i);
+           void with(int&,int);
+          void disp(int&,int);
+     };
+     void bank::adddata()
+     {
+     	int i,n;
+           n=101;
+          for(i=0;i<5;i++)
+           {
+   		    cout<<"\n Enter the Name :";
+         fflush(stdin);
+         cin>>name[i];
+    cout<<"\n Type of Account(Recurring-r,Saving-  s,Current-c) : ";
+        	    cin>>type[i];
+         cout<<"\n Amount to be deposited  ";
+         cin>>balacc[i];
+               while(balacc[i]<500)
+         	   {   
+   cout<<"\nsorry!amount is less than min amount";
+                 cout<<"\n Please Deposite more than 500”; 
+                 cout<<"\n Amount to be deposited  ";
+                 cin>>balacc[i];
+             	}
+             	noacc[i]=n+i;
+        		cout<<"\n Account Number : "<<noacc[i];
+       	 	cout<<" \n* * * * * * * * * * * * * * *\n ";
+              }
+     	}
+          void bank::showdata()
+        	{
+     	     for(int i=0;i<5;i++)
+          	{
+                cout<<"\n Person # "<<i+1;
+                cout<<"\n Name :->"<<name[i];
+                cout<<"\nYour Account No:->"<<noacc[i];
+                if(type[i]=='r'||type[i]=='R')
+     	     	cout<<"\n Type of Account:->Recurring";
+          	if(type[i]=='c'||type[i]=='C')
+            		cout<<"\n Type of Account:->Current";
+          	if(type[i]=='s'||type[i]=='S')
+             		cout<<"\n Type of Account:->Saving";
+          		cout<<"Balance Amount:->"<<balacc[i];
+                getch();
+               }
+          }
+  		void bank::disp(int &x,int i)
+  		{
+   			 int a;
+   			 cout<<"\n Enter the Deposit Amount : ";
+			cin>>a;
+           	x=x+a;
+           	cout<<"\n Name :->"<<name[i];
+           	cout<<"\n Account No:->"<<noacc[i];
+     		cout<<"\n Type of Account :->"<<type[i];
+           	cout<<"\n Balance Amount:->"<<balacc[i];
+    	    	}
+     	void bank::show(int i)
+     	{
+         		cout<<"\n Name :->"<<name[i];
+          	cout<<"\n Account no:->"<<noacc[i];
+                cout<<"\n Type of Account:->"<<type[i];
+                cout<<"\n Balance Amount:->"<<balacc[i];
+           }
+          void bank::with(int &x,int i)
+    		{
+   			int b;
+     cout<<"\n Enter the Withdraw Amount : ";
+      	cin>>b;
+          		x=x-b;
+                if(x>500) 
+       {
+                	cout<<"\n Name:->"<<name[i];
+                cout<<"\n Account No:->"<<noacc[i];
+           	     cout<<"\n Type of Account:->"<<type[i];
+                	cout<<"Balance Amount :->"<<balacc[i];	
+           	 }
+         		 else
+          	{
+           cout<<"Sorry!Minimum Balance should be 500 left ";
+                x=x+b;
+                }
+           }
+
+   	     void main()
+            {
+     		 clrscr();
+            bank b;
+            b.adddata();
+            b.showdata();
+            int z,flag=0;
+            char a;
+      do
+       { int i=0;
+          flag=0;
+
+               cout<<"\n * * * * * * * * * * * * * * * * * * * * * * * *\n";
+      cout<<"\nYou can now proceed with the transactions”;
+    			cout<<"Please enter the account number :";
+            cin>>z;
+          for(i=0;i<5;i++)
+      	{
+            if(b.noacc[i]==z)
+      	  {
+         	  	int ch1;
+              flag=1;
+    	cout<<"\n\n 1.Deposit amount \n 2.Withdraw amount \n 3.Checking balance";
+ 		 	cout<<"\n your choice :(1,2,3) ";
+   			cin>>ch1;
+   			switch(ch1)
+   			{
+              case 1:
+     		  b.disp(b.balacc[i],i);
+            break;
+
+              case 2:
+          	 	b.with(b.balacc[i],i);
+               break;
+        		  case 3:
+              	b.show(i);
+                }
+    		  }
+          		  
+        	}
+     	if(flag==0)
+      cout<<"\n sorry ! this account no. is not in this bank ";
+    		  cout<<"\n do you went continue (y/n): ";
+		 cin>>a;
+         }while(a=='y');
+        getch();
+       }
+
+
+Solution no.26:-
+
+      #include<iostream.h>
+      #include<conio.h>
+      float cube(int);
+      double cube(float);
+      long double cube(double);
+      void main()
+      {
+      int x;
+      float y;
+      double z;
+      clrscr();
+      cout<<"\n Enter the integer value : ";
+      cin>>x;
+      cout<<"\n Cube of "<<x<<" is "<<cube(x);
+      cout<<"\n Enter the float type value : ";
+      cin>>y;
+      cout<<"\n Cube of"<<y<<" is"<<cube(y);
+      cout<<"\n Enter the double type value : ";
+      cin>>z;
+      cout<<"\n Cube of"<<z <<"is "<<cube(z);
+      getch();
+      }
+      float cube(int a)
+{
+      return(a*a*a);
+      }
+      double cube(float b)
+      {
+      return(b*b*b);
+}
+      long double cube(double c)
+      {
+      return(c*c*c);
+      }
+
+
+Solution no.27:-
+
+      #include<iostream.h>
+      #include<conio.h>
+      class counter
+      {
+      static int count;
+      public:
+      counter()
+      {
+      	++count;
+      }
+      static void display()
+      {
+      cout<<"Counter value:"<<count<<endl;
+      }
+};
+      int counter::count=0;
+      void main()
+      {
+      clrscr();
+      cout<<"Before creating any object"<<endl;
+      counter::display();
+      counter o1,o2,o3,o4,o5;
+      cout<<"After instantiation"<<endl;
+      counter::display();
+      getch();
+      }
+
+Solution no. 28:-
+
+      #include<iostream.h>
+      #include<conio.h>
+      #include<string.h>
+      enum test{false,true};
+      class string
+      {
+      char name[20];
+      public:
+      	void get()
+          {
+             cout<<"\n Enter the Name : ";
+             cin>>name;
+          }
+          void show()
+          {
+    			cout<<"\n Name is : "<<name;
+          }
+         test operator=(string);
+         test operator<(string);
+     };
+  	 test string::operator=(string s)
+         {
+          if(strcmp(name,s.name)==0)
+          return(true);
+          else
+          return(false);
+           }
+       test string::operator<(string s)
+           {
+     	 if(strcmp(name,s.name)<0)
+            return true;
+            else
+            return false;
+            }
+      void main()
+     {
+     	string s1,s2;
+           clrscr();
+           s1.get();
+           s1.show();
+           s2.get();
+           s2.show();
+           if(s1<s2)
+			 cout<<"\n Object s2 is Greater";
+            else if(s1=s2)
+            cout<<"Both are Equal";
+            else
+            cout<<"\n Object s1 is Greater";
+           getch();
+     }
+
+Solution no.28(b):-
+
+      #include<iostream.h>
+      #include<conio.h>
+      #include<string.h>	
+      #include <stdio.h>
+      #include <stdlib.h>
+      class string
+      {
+      char str[20];
+      public:
+      string()
+		{
+      strcpy(str," ");
+      }
+      void get()
+      {
+          cout<<"\nEnter the String:";
+          gets(str);
+      }
+      void display()
+      {
+      cout<<endl<<str;
+      cout<<"\n * * * * * * * * * * * * *\n";
+      }
+      string operator+(string s2)
+      {
+      if(strlen(str)+strlen(s2.str)>=20)
+      {
+        cout<<"\nStrings can't be concatenated:";
+        exit(0);
+      }
+      string temp;
+      strcpy(temp.str,str);
+      strcat(temp.str,s2.str);
+      return temp;
+      }
+      string operator+=(string);
+      };
+string string::operator+=(string s2)
+      {
+      	if(strlen(str)+strlen(s2.str)>=20)
+      	{
+       		 cout<<"\nStrings can't be concatenated:";
+      		  exit(0);
+      	}
+          strcat(str,s2.str);
+		return *this;
+      }
+
+      void main()
+      {	
+      string s1,s2,s3;
+      clrscr();
+      s1.get();
+      s2.get();
+      cout<<"\n Overload arithmetic + operator \n";
+      s3=s1+s2;
+      s3.display();
+      cout<<"\n Overload arithmetic += operator \n";
+      s1+=s2;
+      s1.display();
+      getch();
+      }
+
+
+Solution no.29:-
+
+      #include<iostream.h>
+      #include<conio.h>
+      class opp
+      {
+      int a;
+      int b;
+      public:
+      void get(int x,int y)
+      { 
+      a=x;
+      b=y;
+      }
+      void show()
+      { 
+      cout<<"\n a="<<a;
+      cout<<"\n b="<<b;
+      cout<<" \n* * * * * * * * * * *";
+      }
+      void operator++()
+      {
+        a++;  b++;
+          }
+      void operator--()
+      { 
+       a--;  b--; 
+      }
+      opp operator+(opp o)
+      {
+         opp temp;
+         temp.a=a+o.a;
+         temp.b=b+o.b;
+         return(temp);
+      }
+      opp operator-(opp o)
+      {
+         opp temp;
+         temp.a=a-o.a;
+         temp.b=b-o.b;
+         return(temp);
+     }
+      opp operator=(opp o)
+      {
+         a=o.a;
+         b=o.b;
+         return *this;
+   }
+
+      };
+      void main()
+      {
+      opp c1,c2,c3,c4;
+      clrscr();
+      cout<<"Initial of value object c1";
+      c1.get(10,20);
+      c1.show();
+      cout<<"\n Initial of value object c2";
+      c2.get(30,40);
+      c2.show();
+      cout<<" \n ++ operator";
+      ++c2;
+      c2.show();
+      cout<<"\n -- operator";
+      --c2;
+      c2.show();
+      getch();
+      cout<<"\n  + sign operator";
+      c3=c1+c2;
+      c3.show();
+      cout<<"\n -  sign operator";	
+      c4=c2-c1;
+      c4.show();
+      getch();
+      clrscr();
+      cout<<"\n Object first c1 is calling ";
+      c1.show();
+      cout<<"\n Object sceond c2 is calling";
+      c2.show();
+      cout<<"\n calling is c1=c2 ";
+      c1=c2;
+      c1.show();
+      getch();
+      }
+
+
+Solution no.30:-
+
+      #include<iostream.h>
+      #include<conio.h>
+      #include<fstream.h>	
+      #include<stdio.h>
+      class text
+      {
+      char str[80];
+      public:
+            void wrt()
+      {
+                  cout<<"\nEnter the text:";
+                  gets(str);
+         	}
+     	void show()
+           {
+     	   cout<<"\n "<<str;
+     	}
+  	};
+      void main()
+      {
+         char ch;
+         text t[5];
+         clrscr();
+     fstream out("text.txt",ios::binary|ios::in|ios::out);
+ 	  for(int i=0;i<5;i++)
+   	  {
+   		   t[i].wrt();
+         out.write((char*)&t[i],sizeof(t[i]));
+   }
+      out.seekg(0);
+      int n,x;
+      cout<<"\n Enter the no of object:";
+      cin>>n;
+      x=(n-1)*sizeof(t[0]);
+      out.seekg(x);
+      out.read((char*)&t[0],sizeof(t[0]));
+      t[0].show();
+      getch();
+      }
+
+
+Solution no.31:-
+
+      #include<fstream.h>
+      #include<iostream.h>
+      #include <string.h>
+      #include<stdio.h>
+      #include<conio.h>
+      void main(int argc,char *argv[])
+      {
+         char arr[200],ch;
+         fstream in(argv[1],ios::in|ios::out);
+         ofstream out;
+         out.open(argv[2]);
+          cout<<"\n Enter the text :- ";
+          gets(arr);
+          in<<arr;
+	    in.seekg(0);
+          while(!in.eof())
+          {
+            in.get(ch);
+      	  out.put(ch);
+      	  cout<<ch;
+           }
+       getch();
+ 	}
+
+
+
+Solution no.32:-
+
+      #include<iostream.h>
+      #include<conio.h>
+      #include <string.h>
+      #include <stdlib.h>
+	void main(int argc,char *argv[])
+      {
+      int a,b;
+      clrscr();
+      a=atoi(argv[1]);
+      b=atoi(argv[2]);
+      cout<<"\n The nos are "<<a<< "&"<<b;
+      if(strcmp(argv[3],"+")==0)
+      	     cout<<"\n Their addition ="<<a+b;
+      else if(strcmp(argv[3],"-")==0)
+      	     cout<<"\n Their subtraction ="<<a-b;
+      else if(strcmp(argv[3],"*")==0)
+      	     cout<<"\n Their multiplication ="<<a*b;
+      else if(strcmp(argv[3],"/")==0)
+      	     cout<<"\n Their division="<<a/b;
+      else
+           cout<<"\n But the symbol "<<*argv[3]<<"is an unrecognized symbol";
+  		getch();
+      }
+
+
+Solution no. 33:-
+      
+      #include<iostream.h>
+      #include<conio.h>
+      #include<fstream.h>
+      #include<stdio.h>
+      class text
+      {
+      char str[80];
+      public:
+            void wrt()
+            {
+                  cout<<"\nEnter the text:";
+                  gets(str);
+       	}
+
+     	void show()
+           {
+     	   cout<<"\n "<<str;
+    		 }
+  	};
+      void main()
+      {
+       char ch;
+       text t[5];
+       clrscr();
+     fstream out("text.txt",ios::binary|ios::in|ios::out);
+   		for(int i=0;i<5;i++)
+   		{
+         t[i].wrt();
+         out.write((char*)&t[i],sizeof(t[i]));
+     }
+      out.seekg(0);
+      int n,x;
+      cout<<"\n Enter the no of object:";
+      cin>>n;
+      x=(n-1)*sizeof(t[0]);
+      out.seekg(x);
+      out.read((char*)&t[0],sizeof(t[0]));
+      t[0].show();
+      getch();
+      }
+
+
+Solution no.34:-
+
+      #include<iostream.h>
+      #include<conio.h>
+      class dm
+      {
+       float centi,meter;
+       public:
+       void get()
+       {
+ 			cout<<"\n Enter the distances of metre : ";
+      	 cin>>meter;
+      	 cout<<"Enter the distances of centimetre:";
+      	 cin>>centi;
+	  	}
+	 	void show()
+	 	{
+			cout<<"\n Distances of metre : "<<meter;
+		 	cout<<"\nDistances of centimetre :"<<centi;
+	   	}
+	  	void add(dm a)
+	  	{
+		   meter=meter+a.meter;
+		   centi=centi+a.centi;
+		   while(centi>=100)
+		    {
+		      centi=centi-100;
+		      meter++;
+	         }
+       	}
+   	};
+   	void main()
+   	{
+    		clrscr();
+          dm d,b;
+          cout<<"\n* * Calling by first object * *\n";
+          d.get();
+          d.show();
+          cout<<"\n* * Calling by second object * *\n";
+          b.get();
+          b.show();
+          cout<<"\n * * passing object to function * * \n";
+          b.add(d);
+          b.show();
+          getch();
+      }
+ 
+
+Solution no.35:-
+      
+      #include<iostream.h>
+      #include<conio.h>
+      class emp_info
+      {
+   		 protected:
+        	char name[20];
+           int empno;
+     char gender[5];
+    public:
+          void  get()
+         {
+          	cout<<"\n Enter the Name of Employee ";
+          	cin>>name;
+          	cout<<"\n Enter the Employee no. :";
+          	cin>>empno;
+   	    cout<<"\n Enter the gender : ";
+      	    cin>>gender;
+          }
+
+};
+      class  emp_phinpo
+      {
+      	protected:
+            float weight,height;
+     	public:
+     	void gets()
+          {
+  	      	cout<<"\n Enter the weight and height : ";
+                  cin>>weight>>height;
+         }
+     };
+class der:public emp_info,public emp_phinpo
+      {
+           char acqu[10];
+      public:
+           void set()
+     	{
+           cout<<"Enter the Academic Qualification : ";
+           cin>>acqu;
+     	}
+      	void show()
+          {
+    		       cout<<"\n Empolyee Name : "<<name;
+                  cout<<"\n Employee Number : "<<empno;
+     		  cout<<"\n Employee gender : "<<gender ;
+      cout<<"Employee Academic Qualification : "<<acqu;
+             cout<<"\n Employee Weight : "<<weight;
+             cout<<"\n Employee Height : "<<height;
+             }
+      };
+  	void main()
+  	{
+  		  clrscr();
+        der d;
+        d.get();
+        d.gets();
+        d.set();
+        d.show();
+        getch();
+  }
+
+
+
